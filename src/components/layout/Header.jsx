@@ -11,6 +11,10 @@ export default function Header() {
             fontFamily: theme.typography.fontFamily.sans,
         },
         container: {
+            width: '100%',
+            maxWidth: theme.layout.contentMaxWidth,
+            margin: '0 auto',
+            boxSizing: 'border-box',
             padding: `${theme.spacing[2]} ${theme.spacing[8]}`,
             display: 'flex',
             justifyContent: 'space-between',
@@ -27,14 +31,13 @@ export default function Header() {
             display: 'flex',
             gap: theme.spacing[6],
             listStyle: 'none',
+            margin: 0,
+            padding: 0,
         },
         link: {
             fontSize: theme.typography.fontSize.sm,
             fontWeight: theme.typography.fontWeight.medium,
-            color: theme.colors.text.secondary,
             textDecoration: 'none',
-            transition: theme.transitions.fast,
-            cursor: 'pointer',
         },
     };
 
@@ -49,26 +52,18 @@ export default function Header() {
         <header style={styles.header}>
             <div style={styles.container}>
                 {/* Logo Bölümü */}
-                <a href="#" style={styles.logo}>
+                <a href="#home" style={styles.logo}>
                     Eren
                 </a>
 
                 {/* Navigasyon Linkleri */}
                 <ul style={styles.nav}>
-                    {navItems.map((item, index) => (
-                        <li key={index}>
+                    {navItems.map((item) => (
+                        <li key={item.href}>
                             <a
                                 href={item.href}
+                                className="portfolio-link"
                                 style={styles.link}
-                                // Inline stillerde hover için onMouseEnter/Leave kullanılır
-                                onMouseEnter={(e) =>
-                                    (e.target.style.color =
-                                        theme.colors.text.primary)
-                                }
-                                onMouseLeave={(e) =>
-                                    (e.target.style.color =
-                                        theme.colors.text.secondary)
-                                }
                             >
                                 {item.label}
                             </a>

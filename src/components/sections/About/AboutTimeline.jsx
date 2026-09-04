@@ -7,12 +7,13 @@ export default function AboutTimeline() {
             style={{
                 display: 'flex',
                 flexDirection: 'column',
+                flex: '1 1 320px',
                 gap: theme.spacing[8],
             }}
         >
-            {timelineData.map((item, index) => (
+            {timelineData.map((item) => (
                 <div
-                    key={index}
+                    key={`${item.period}-${item.role}`}
                     style={{
                         display: 'flex',
                         flexDirection: 'column',

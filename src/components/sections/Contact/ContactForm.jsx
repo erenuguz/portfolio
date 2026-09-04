@@ -10,7 +10,6 @@ export default function ContactForm() {
         backgroundColor: theme.colors.background,
         border: `1px solid ${theme.colors.border}`,
         borderRadius: theme.borderRadius.md,
-        outline: 'none',
         transition: theme.transitions.fast,
     };
 
@@ -53,14 +52,8 @@ export default function ContactForm() {
                     <input
                         type="text"
                         id="name"
+                        className="form-input"
                         style={inputStyle}
-                        onFocus={(e) =>
-                            (e.target.style.borderColor =
-                                theme.colors.action.primary)
-                        }
-                        onBlur={(e) =>
-                            (e.target.style.borderColor = theme.colors.border)
-                        }
                     />
                 </div>
                 <div style={inputGroupStyle}>
@@ -70,14 +63,8 @@ export default function ContactForm() {
                     <input
                         type="email"
                         id="email"
+                        className="form-input"
                         style={inputStyle}
-                        onFocus={(e) =>
-                            (e.target.style.borderColor =
-                                theme.colors.action.primary)
-                        }
-                        onBlur={(e) =>
-                            (e.target.style.borderColor = theme.colors.border)
-                        }
                     />
                 </div>
             </div>
@@ -89,14 +76,8 @@ export default function ContactForm() {
                 <input
                     type="text"
                     id="subject"
+                    className="form-input"
                     style={inputStyle}
-                    onFocus={(e) =>
-                        (e.target.style.borderColor =
-                            theme.colors.action.primary)
-                    }
-                    onBlur={(e) =>
-                        (e.target.style.borderColor = theme.colors.border)
-                    }
                 />
             </div>
 
@@ -106,43 +87,27 @@ export default function ContactForm() {
                 </label>
                 <textarea
                     id="message"
+                    className="form-input"
                     style={{
                         ...inputStyle,
                         resize: 'vertical',
                         minHeight: '150px',
                     }}
-                    onFocus={(e) =>
-                        (e.target.style.borderColor =
-                            theme.colors.action.primary)
-                    }
-                    onBlur={(e) =>
-                        (e.target.style.borderColor = theme.colors.border)
-                    }
                 ></textarea>
             </div>
 
             <button
                 type="submit"
+                className="form-submit"
                 style={{
                     padding: `${theme.spacing[3]} ${theme.spacing[8]}`,
-                    backgroundColor: theme.colors.action.primary,
-                    color: theme.colors.surface,
                     fontSize: theme.typography.fontSize.base,
                     fontWeight: theme.typography.fontWeight.medium,
                     border: 'none',
                     borderRadius: theme.borderRadius.md,
                     cursor: 'pointer',
                     alignSelf: 'flex-start',
-                    transition: theme.transitions.fast,
                 }}
-                onMouseEnter={(e) =>
-                    (e.target.style.backgroundColor =
-                        theme.colors.action.primaryHover)
-                }
-                onMouseLeave={(e) =>
-                    (e.target.style.backgroundColor =
-                        theme.colors.action.primary)
-                }
             >
                 Gönder
             </button>

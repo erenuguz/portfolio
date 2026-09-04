@@ -1,5 +1,53 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #f7f5f2;
     margin: 0;
     padding: 0;
+}
+
+[id] {
+    scroll-margin-top: 5rem;
+}
+
+.portfolio-link {
+    color: #57534e;
+    cursor: pointer;
+    transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-link:hover {
+    color: #1c1917;
+}
+
+.base-button {
+    color: var(--button-color);
+    background-color: var(--button-background);
+}
+
+.base-button:hover {
+    color: var(--button-hover-color);
+    background-color: var(--button-hover-background);
+}
+
+.portfolio-link:focus-visible,
+.base-button:focus-visible,
+.form-input:focus-visible,
+.form-submit:focus-visible {
+    outline: 2px solid #1c1917;
+    outline-offset: 3px;
+}
+
+.form-submit {
+    color: #faf9f7;
+    background-color: #1c1917;
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-submit:hover {
+    background-color: #292524;
 }

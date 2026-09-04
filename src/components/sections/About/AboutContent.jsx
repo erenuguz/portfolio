@@ -7,6 +7,7 @@ export default function AboutContent() {
             style={{
                 display: 'flex',
                 flexDirection: 'column',
+                flex: '1 1 500px',
                 gap: theme.spacing[4],
             }}
         >

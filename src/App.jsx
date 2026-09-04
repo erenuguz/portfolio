@@ -1,5 +1,4 @@
 import Header from '@/components/layout/Header';
-import '@/styles/global.css';
 import Hero from '@/components/sections/Hero';
 import About from '@/components/sections/About';
 import Skills from '@/components/sections/Skills';

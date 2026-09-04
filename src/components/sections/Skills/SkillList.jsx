@@ -12,9 +12,9 @@ export default function SkillList({items}) {
                 padding: 0,
             }}
         >
-            {items.map((skill, index) => (
+            {items.map((skill) => (
                 <li
-                    key={index}
+                    key={skill}
                     style={{
                         fontSize: theme.typography.fontSize.base,
                         color: theme.colors.text.secondary,

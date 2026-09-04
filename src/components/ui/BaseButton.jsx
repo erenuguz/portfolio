@@ -1,40 +1,40 @@
-import {useState} from 'react';
-
 export default function BaseButton({
     children,
     as = 'button',
     href,
     customStyle = {},
     hoverStyle = {},
+    className = '',
     ...rest
 }) {
-    const [isHovered, setIsHovered] = useState(false);
+    const {color, backgroundColor, ...remainingCustomStyle} = customStyle;
 
     const baseStyles = {
+        '--button-color': color ?? 'inherit',
+        '--button-background': backgroundColor ?? 'transparent',
+        '--button-hover-color': hoverStyle.color ?? color ?? 'inherit',
+        '--button-hover-background':
+            hoverStyle.backgroundColor ?? backgroundColor ?? 'transparent',
         display: 'inline-flex',
         alignItems: 'center',
         justifyContent: 'center',
         cursor: 'pointer',
         textDecoration: 'none',
         border: 'none',
-        background: 'none',
         fontFamily: 'inherit',
-    };
-
-    const combinedStyles = {
-        ...baseStyles,
-        ...customStyle,
-        ...(isHovered ? hoverStyle : {}),
+        ...remainingCustomStyle,
     };
 
     const Component = as === 'a' || href ? 'a' : 'button';
+    const combinedClassName = ['base-button', className]
+        .filter(Boolean)
+        .join(' ');
 
     return (
         <Component
             href={href}
-            style={combinedStyles}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
+            className={combinedClassName}
+            style={baseStyles}
             {...rest}
         >
             {children}

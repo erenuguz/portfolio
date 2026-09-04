@@ -10,9 +10,9 @@ export default function ProjectTag({tags}) {
                 marginTop: theme.spacing[2],
             }}
         >
-            {tags.map((tag, index) => (
+            {tags.map((tag) => (
                 <span
-                    key={index}
+                    key={tag}
                     style={{
                         fontSize: theme.typography.fontSize.xs,
                         padding: `${theme.spacing[1]} ${theme.spacing[2]}`,

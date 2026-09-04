@@ -83,6 +83,10 @@ export const theme = {
         normal: '300ms cubic-bezier(0.4, 0, 0.2, 1)', // Modal açılışları, sayfa geçişleri
     },
 
+    layout: {
+        contentMaxWidth: '1200px',
+    },
+
     // 7. Responsive Kırılma Noktaları (Media Queries)
     breakpoints: {
         sm: '640px', // Büyük telefonlar

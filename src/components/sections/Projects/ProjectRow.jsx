@@ -5,6 +5,9 @@ import ProjectTag from '@/components/sections/Projects/ProjectTag';
 import Title from '@/components/common/Title';
 
 export default function ProjectRow({project}) {
+    const hasGithubLink = project.github && project.github !== '#';
+    const hasLiveLink = project.live && project.live !== '#';
+
     return (
         <div
             style={{
@@ -43,8 +46,8 @@ export default function ProjectRow({project}) {
                     flexShrink: 0,
                 }}
             >
-                {project.github && <GithubButton href={project.github} />}
-                {project.live && <LiveButton href={project.live} />}
+                {hasGithubLink && <GithubButton href={project.github} />}
+                {hasLiveLink && <LiveButton href={project.live} />}
             </div>
         </div>
     );
