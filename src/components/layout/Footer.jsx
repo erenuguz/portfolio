@@ -49,7 +49,7 @@ export default function Footer() {
                 <ul style={styles.nav}>
                     <li>
                         <a
-                            href="#"
+                            href="https://github.com/erenuguz"
                             style={styles.link}
                             onMouseEnter={(e) =>
                                 (e.target.style.color =
@@ -65,7 +65,7 @@ export default function Footer() {
                     </li>
                     <li>
                         <a
-                            href="#"
+                            href="https://www.linkedin.com/in/erenuguz"
                             style={styles.link}
                             onMouseEnter={(e) =>
                                 (e.target.style.color =
@@ -81,7 +81,7 @@ export default function Footer() {
                     </li>
                     <li>
                         <a
-                            href="mailto:eren@example.com"
+                            href="mailto:erenn.uguz@gmail.com"
                             style={styles.link}
                             onMouseEnter={(e) =>
                                 (e.target.style.color =

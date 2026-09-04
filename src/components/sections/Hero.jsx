@@ -40,7 +40,7 @@ export default function Hero() {
                 justifyContent: 'center',
                 backgroundColor: theme.colors.surfaceAlt,
             }}
-            id="about"
+            id="home"
         >
             <div
                 style={{
