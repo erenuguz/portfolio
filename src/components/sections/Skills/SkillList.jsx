@@ -16,6 +16,7 @@ export default function SkillList({items}) {
                 <li
                     key={skill}
                     style={{
+                        fontFamily: theme.typography.fontFamily.mono,
                         fontSize: theme.typography.fontSize.base,
                         color: theme.colors.text.secondary,
                         display: 'flex',

@@ -14,6 +14,7 @@ export default function ProjectTag({tags}) {
                 <span
                     key={tag}
                     style={{
+                        fontFamily: theme.typography.fontFamily.mono,
                         fontSize: theme.typography.fontSize.xs,
                         padding: `${theme.spacing[1]} ${theme.spacing[2]}`,
                         backgroundColor: theme.colors.surfaceHover,

@@ -1,5 +1,5 @@
 import {theme} from '@/styles/theme';
-import {timelineData} from '@/data'; // Veriyi data dosyasından alıyoruz
+import {timelineData} from '@/data';
 
 export default function AboutTimeline() {
     return (
@@ -27,6 +27,7 @@ export default function AboutTimeline() {
                             fontSize: theme.typography.fontSize.sm,
                             fontWeight: theme.typography.fontWeight.semibold,
                             color: theme.colors.text.muted,
+                            fontFamily: theme.typography.fontFamily.sans,
                         }}
                     >
                         {item.period}
@@ -43,9 +44,10 @@ export default function AboutTimeline() {
                             style={{
                                 fontSize: theme.typography.fontSize.lg,
                                 fontWeight:
-                                    theme.typography.fontWeight.semibold,
+                                    theme.typography.fontWeight.bold,
                                 color: theme.colors.text.primary,
                                 margin: 0,
+                                fontFamily: theme.typography.fontFamily.sans,
                             }}
                         >
                             {item.role}
@@ -54,6 +56,7 @@ export default function AboutTimeline() {
                             style={{
                                 fontSize: theme.typography.fontSize.base,
                                 color: theme.colors.text.secondary,
+                                fontFamily: theme.typography.fontFamily.sans,
                             }}
                         >
                             — {item.company}
@@ -66,6 +69,7 @@ export default function AboutTimeline() {
                             lineHeight: '1.6',
                             margin: 0,
                             marginTop: theme.spacing[1],
+                            fontFamily: theme.typography.fontFamily.body,
                         }}
                     >
                         {item.description}

@@ -18,7 +18,7 @@ export default function About() {
             <div
                 style={{
                     width: '100%',
-                    maxWidth: theme.layout.contentMaxWidth,
+                    
                     margin: '0 auto',
                     display: 'flex',
                     flexDirection: 'column',

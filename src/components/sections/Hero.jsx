@@ -5,7 +5,6 @@ import Title from '@/components/common/Title';
 import Text from '@/components/common/Text';
 
 export default function Hero() {
-    
     const statusBadgeComponent = (
         <div
             style={{
@@ -13,10 +12,11 @@ export default function Hero() {
                 alignItems: 'center',
                 gap: theme.spacing[2],
                 padding: `${theme.spacing[1]} ${theme.spacing[3]}`,
-                fontSize: theme.typography.fontSize.sm,
-                fontWeight: theme.typography.fontWeight.medium,
-                color: theme.colors.text.secondary,
-                marginBottom: theme.spacing[8],
+                fontSize: theme.typography.fontSize.label,
+                fontFamily: theme.typography.fontFamily.mono,
+                fontWeight: theme.typography.fontWeight.bold,
+                color: theme.colors.accent,
+                marginBottom: theme.spacing[6],
             }}
         >
             <span
@@ -35,17 +35,17 @@ export default function Hero() {
     return (
         <section
             style={{
-                padding: `${theme.spacing[12]} ${theme.spacing[8]}`,
+                padding: `${theme.spacing[20]} ${theme.spacing[8]}`,
                 display: 'flex',
                 justifyContent: 'center',
-                backgroundColor: theme.colors.surfaceAlt,
+                backgroundColor: theme.colors.background,
+                borderBottom: `1px solid ${theme.colors.border}`,
             }}
             id="home"
         >
             <div
                 style={{
                     width: '100%',
-                    maxWidth: theme.layout.contentMaxWidth,
                     margin: '0 auto',
                     display: 'flex',
                     flexDirection: 'column',
@@ -59,8 +59,13 @@ export default function Hero() {
                 <Subtitle>YAZILIM MÜHENDİSİ</Subtitle>
 
                 <Title>
-                    <span>Merhaba,</span>
-                    <span> ben Eren.</span>
+                    <span style={{color: theme.colors.text.primary}}>
+                        Merhaba,
+                    </span>
+                    <span style={{color: theme.colors.action.link}}>
+                        {' '}
+                        ben Eren.
+                    </span>
                 </Title>
 
                 {/* Açıklama */}

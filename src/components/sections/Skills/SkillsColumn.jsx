@@ -1,5 +1,6 @@
 import {theme} from '@/styles/theme';
 import SkillList from './SkillList';
+import Title from '@/components/common/Title';
 
 export default function SkillsColumn({category}) {
     return (
@@ -8,20 +9,19 @@ export default function SkillsColumn({category}) {
                 display: 'flex',
                 flexDirection: 'column',
                 gap: theme.spacing[4],
+                padding: theme.spacing[4],
             }}
         >
-            <h3
+            <Title
                 style={{
-                    fontSize: theme.typography.fontSize.lg,
-                    fontWeight: theme.typography.fontWeight.semibold,
-                    color: theme.colors.text.primary,
+                    fontSize: theme.typography.fontSize.base,
                     borderBottom: `1px solid ${theme.colors.border}`,
                     paddingBottom: theme.spacing[2],
-                    margin: 0,
                 }}
             >
                 {category.title}
-            </h3>
+            </Title>
+
             <SkillList items={category.items} />
         </div>
     );

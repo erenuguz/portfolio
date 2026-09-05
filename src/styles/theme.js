@@ -1,97 +1,130 @@
 export const theme = {
-    // 1. Renk Paleti (Minimalist Beyaz/Açık Gri Tonlar)
     colors: {
-    header:     '#efece7', // Headerın zemini — kremden biraz koyu
-    footer:     '#efece7', // Footer zemini — header ile aynı
+        // Header ve ana sayfa zemini
+        header: '#f5f2ec',
+        background: '#f5f2ec',
 
-    background: '#f7f5f2', // Sayfa zemini — göz yormayan sıcak krem
-    surface:    '#faf9f7', // Kart, form, navbar zemini — kremden biraz açık
-    surfaceAlt: '#efece7', // Alternatif bölüm zemini (hakkımda, projeler)
-    surfaceHover: '#e8e5e0', // Hover durumu — surface ile uyumlu sıcak gri
+        // Footer için aynı renk ailesinde biraz daha koyu ton
+        footer: '#ebe6dc',
 
-    border:     '#e0dbd4', // Ayırıcı çizgiler — sıcak gri
+        // Kart ve içerik yüzeyleri
+        surface: '#fbf9f4',
+        surfaceAlt: '#ece8df',
+        surfaceHover: '#eae5dc',
 
-    text: {
-        primary:   '#1c1917', // Ana başlıklar — sıcak siyah (saf siyah değil)
-        secondary: '#57534e', // Paragraf, açıklamalar — sıcak koyu gri
-        muted:     '#a8a29e', // Tarihler, etiketler — sıcak açık gri
+        // Çizgiler ve kenarlıklar
+        border: '#d9d4ca',
+
+        text: {
+            primary: '#2d2c28',
+            secondary: '#5e5a52',
+            muted: '#958d80',
+        },
+
+        action: {
+            primary: '#2d2c28',
+            primaryHover: '#4a4740',
+            link: '#716b61',
+        },
+
+        // Ek vurgu renkleri
+        accent: '#8a7d67',
+        accentSoft: '#e7dfd1',
+        accentLine: '#b9ad98',
     },
 
-    action: {
-        primary:      '#1c1917', // Ana buton zemini
-        primaryHover: '#292524', // Buton hover
-        link:         '#1c1917', // Link — mavi yok, altı çizgili siyah yeter
-    },
-},
-
-    // 2. Tipografi (Yazı Tipleri ve Boyutlar)
     typography: {
         fontFamily: {
-            sans: "'Inter', system-ui, -apple-system, sans-serif", // Genel okuma fontu
-            mono: "'JetBrains Mono', monospace", // Kod blokları veya teknik detaylar
+            // Mevcut Header kodun theme.typography.fontFamily.sans kullanıyor
+            sans: '"DM Sans", Inter, system-ui, sans-serif',
+
+            // Normal içerik metinleri
+            body: '"DM Sans", Inter, system-ui, sans-serif',
+
+            // Büyük başlıklar ve logo harfi
+            heading: '"Instrument Serif", Georgia, serif',
+
+            // Küçük teknik başlıklar ve etiketler
+            mono: '"Space Mono", "SFMono-Regular", monospace',
         },
+
         fontSize: {
-            xs: '0.75rem', // 12px - Etiketler, yetenek (skill) rozetleri
-            sm: '0.875rem', // 14px - Alt metinler, menü linkleri
-            base: '1rem', // 16px - Normal paragraflar
-            lg: '1.125rem', // 18px - Kart başlıkları, buton metinleri
-            xl: '1.25rem', // 20px - Alt bölüm başlıkları
-            '2xl': '1.5rem', // 24px - Section (Bölüm) başlıkları
-            '3xl': '1.875rem', // 30px - Büyük başlıklar
-            '4xl': '2.25rem', // 36px - Hero (karşılama) bölümü ana başlığı
-            '5xl': '3rem', // 48px - Ekstra büyük vurgular
+            xs: '0.75rem', // 12px
+            sm: '0.875rem', // 14px
+            base: '1rem', // 16px
+            lg: '1.125rem', // 18px
+            xl: '1.25rem', // 20px
+            '2xl': '1.5rem', // 24px
+            '3xl': '1.875rem', // 30px
+            '4xl': '2.25rem', // 36px
+            '5xl': '3rem', // 48px
+
+            // Ek tasarım değerleri
+            label: '0.625rem', // 10px
+            display: 'clamp(4.8rem, 8.6vw, 8.4rem)',
         },
+
         fontWeight: {
             normal: '400',
             medium: '500',
             semibold: '600',
             bold: '700',
         },
+
+        lineHeight: {
+            tight: '0.86',
+            normal: '1.5',
+            relaxed: '1.8',
+        },
     },
 
-    // 3. Boşluklar (Margin ve Padding için standart ölçüler)
     spacing: {
         1: '0.25rem', // 4px
-        2: '0.5rem', // 8px  - İkon ile yazı arası
+        2: '0.5rem', // 8px
         3: '0.75rem', // 12px
-        4: '1rem', // 16px - Standart padding (kart içi boşluk)
+        4: '1rem', // 16px
         6: '1.5rem', // 24px
-        8: '2rem', // 32px - Bölüm başlığı ile içerik arası
+        8: '2rem', // 32px
         12: '3rem', // 48px
-        16: '4rem', // 64px - İki farklı section (Projects - About) arası dikey boşluk
+        16: '4rem', // 64px
         24: '6rem', // 96px
+
+        // Ek aralıklar
+        5: '1.25rem', // 20px
+        7: '1.75rem', // 28px
+        10: '2.5rem', // 40px
+        14: '3.5rem', // 56px
+        20: '5rem', // 80px
     },
 
-    // 4. Kenar Ovalleştirme (Border Radius)
     borderRadius: {
-        sm: '0.375rem', // 6px  - Küçük inputlar, etiketler
-        md: '0.5rem', // 8px  - Standart butonlar, küçük resimler
-        lg: '0.75rem', // 12px - Proje kartları, büyük çerçeveler
-        full: '9999px', // Profil fotoğrafı, yuvarlak ikon hapları
+        sm: '0.5rem', // 8px
+        md: '0.75rem', // 12px
+        lg: '1rem', // 16px
+        xl: '2rem', // 32px
+        full: '9999px',
     },
 
-    // 5. Gölgeler (Temiz ve Derinlik Katan Hafif Gölgeler)
     shadows: {
-        sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)', // Butonlar ve küçük rozetler
-        md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)', // Standart proje kartları
-        lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)', // Açılır menü, modal pencereleri
+        sm: '0 1px 2px rgba(45, 44, 40, 0.06)',
+        md: '0 8px 24px rgba(45, 44, 40, 0.08)',
+        lg: '0 18px 45px rgba(45, 44, 40, 0.12)',
     },
 
-    // 6. Animasyon Geçişleri
     transitions: {
-        fast: '150ms cubic-bezier(0.4, 0, 0.2, 1)', // Buton renk değişimleri (hover)
-        normal: '300ms cubic-bezier(0.4, 0, 0.2, 1)', // Modal açılışları, sayfa geçişleri
+        fast: '150ms ease',
+        normal: '200ms ease',
     },
 
     layout: {
         contentMaxWidth: '1200px',
     },
 
-    // 7. Responsive Kırılma Noktaları (Media Queries)
     breakpoints: {
-        sm: '640px', // Büyük telefonlar
-        md: '768px', // Tabletler
-        lg: '1024px', // Laptoplar
-        xl: '1280px', // Geniş ekran masaüstü
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1536px',
     },
 };

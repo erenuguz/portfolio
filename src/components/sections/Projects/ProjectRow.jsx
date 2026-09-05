@@ -5,9 +5,6 @@ import ProjectTag from '@/components/sections/Projects/ProjectTag';
 import Title from '@/components/common/Title';
 
 export default function ProjectRow({project}) {
-    const hasGithubLink = project.github && project.github !== '#';
-    const hasLiveLink = project.live && project.live !== '#';
-
     return (
         <div
             style={{
@@ -25,11 +22,10 @@ export default function ProjectRow({project}) {
                 style={{
                     display: 'flex',
                     flexDirection: 'column',
-                    gap: theme.spacing[1],
-                    flex: '1 1 600px',
+                    gap: theme.spacing[4],
                 }}
             >
-                <Title customStyle={{fontSize: theme.typography.fontSize.xl}}>
+                <Title style={{fontSize: theme.typography.fontSize.base}}>
                     {project.name}
                 </Title>
 
@@ -46,8 +42,8 @@ export default function ProjectRow({project}) {
                     flexShrink: 0,
                 }}
             >
-                {hasGithubLink && <GithubButton href={project.github} />}
-                {hasLiveLink && <LiveButton href={project.live} />}
+                <GithubButton href={project.github} />
+                <LiveButton href={project.live} />
             </div>
         </div>
     );

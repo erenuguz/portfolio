@@ -8,11 +8,10 @@ export default function Header() {
             position: 'sticky',
             top: 0,
             zIndex: 50,
-            fontFamily: theme.typography.fontFamily.sans,
         },
         container: {
             width: '100%',
-            maxWidth: theme.layout.contentMaxWidth,
+
             margin: '0 auto',
             boxSizing: 'border-box',
             padding: `${theme.spacing[2]} ${theme.spacing[8]}`,
@@ -21,11 +20,11 @@ export default function Header() {
             alignItems: 'center',
         },
         logo: {
-            fontSize: theme.typography.fontSize.xl,
+            fontSize: theme.typography.fontSize['4xl'],
             fontWeight: theme.typography.fontWeight.bold,
             color: theme.colors.text.primary,
             textDecoration: 'none',
-            letterSpacing: '-0.025em',
+            letterSpacing: '-0.025em',fontFamily: theme.typography.fontFamily.heading,
         },
         nav: {
             display: 'flex',
@@ -33,11 +32,14 @@ export default function Header() {
             listStyle: 'none',
             margin: 0,
             padding: 0,
+            fontFamily: theme.typography.fontFamily.sans,
         },
         link: {
             fontSize: theme.typography.fontSize.sm,
-            fontWeight: theme.typography.fontWeight.medium,
+            fontWeight: theme.typography.fontWeight.semibold,
             textDecoration: 'none',
+            color: theme.colors.text.secondary,
+            letterSpacing: '0.16em',
         },
     };
 
@@ -53,7 +55,7 @@ export default function Header() {
             <div style={styles.container}>
                 {/* Logo Bölümü */}
                 <a href="#home" style={styles.logo}>
-                    Eren
+                    Eren Uğuz
                 </a>
 
                 {/* Navigasyon Linkleri */}

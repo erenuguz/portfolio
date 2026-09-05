@@ -5,7 +5,7 @@ export default function ContactForm() {
         width: '100%',
         padding: theme.spacing[3],
         fontSize: theme.typography.fontSize.base,
-        fontFamily: theme.typography.fontFamily.sans,
+
         color: theme.colors.text.primary,
         backgroundColor: theme.colors.background,
         border: `1px solid ${theme.colors.border}`,
@@ -17,6 +17,7 @@ export default function ContactForm() {
         fontSize: theme.typography.fontSize.sm,
         fontWeight: theme.typography.fontWeight.medium,
         color: theme.colors.text.primary,
+        fontFamily: theme.typography.fontFamily.sans,
     };
 
     const inputGroupStyle = {

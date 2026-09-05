@@ -8,12 +8,9 @@ export default function Footer() {
             backgroundColor: theme.colors.footer,
             borderTop: `1px solid ${theme.colors.border}`,
             padding: `${theme.spacing[8]} ${theme.spacing[8]}`,
-            fontFamily: theme.typography.fontFamily.sans,
         },
         container: {
             width: '100%',
-            maxWidth: theme.layout.contentMaxWidth,
-            margin: '0 auto',
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
@@ -21,6 +18,7 @@ export default function Footer() {
         copyright: {
             fontSize: theme.typography.fontSize.sm,
             color: theme.colors.text.muted,
+            fontFamily: theme.typography.fontFamily.mono,
         },
         nav: {
             display: 'flex',
@@ -28,11 +26,15 @@ export default function Footer() {
             listStyle: 'none',
             margin: 0,
             padding: 0,
+            fontFamily: theme.typography.fontFamily.sans,
         },
         link: {
             fontSize: theme.typography.fontSize.sm,
             fontWeight: theme.typography.fontWeight.medium,
+            color: theme.colors.text.secondary,
             textDecoration: 'none',
+            transition: theme.transitions.fast,
+            cursor: 'pointer',
         },
     };
 
@@ -49,8 +51,15 @@ export default function Footer() {
                     <li>
                         <a
                             href="https://github.com/erenuguz"
-                            className="portfolio-link"
                             style={styles.link}
+                            onMouseEnter={(e) =>
+                                (e.target.style.color =
+                                    theme.colors.text.primary)
+                            }
+                            onMouseLeave={(e) =>
+                                (e.target.style.color =
+                                    theme.colors.text.secondary)
+                            }
                         >
                             GitHub
                         </a>
@@ -58,8 +67,15 @@ export default function Footer() {
                     <li>
                         <a
                             href="https://www.linkedin.com/in/erenuguz"
-                            className="portfolio-link"
                             style={styles.link}
+                            onMouseEnter={(e) =>
+                                (e.target.style.color =
+                                    theme.colors.text.primary)
+                            }
+                            onMouseLeave={(e) =>
+                                (e.target.style.color =
+                                    theme.colors.text.secondary)
+                            }
                         >
                             LinkedIn
                         </a>
@@ -67,8 +83,15 @@ export default function Footer() {
                     <li>
                         <a
                             href="mailto:erenn.uguz@gmail.com"
-                            className="portfolio-link"
                             style={styles.link}
+                            onMouseEnter={(e) =>
+                                (e.target.style.color =
+                                    theme.colors.text.primary)
+                            }
+                            onMouseLeave={(e) =>
+                                (e.target.style.color =
+                                    theme.colors.text.secondary)
+                            }
                         >
                             E-posta
                         </a>
