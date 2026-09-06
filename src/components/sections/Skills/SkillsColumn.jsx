@@ -1,28 +1,28 @@
 import {theme} from '@/styles/theme';
-import SkillList from './SkillList';
+import Card from '@/components/ui/Card';
 import Title from '@/components/common/Title';
+import SkillList from '@/components/sections/Skills/SkillList';
 
 export default function SkillsColumn({category}) {
     return (
-        <div
+        <Card
+            as="article"
             style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: theme.spacing[4],
-                padding: theme.spacing[4],
+                height: '100%',
             }}
         >
             <Title
+                as="h3"
+                variant="card"
                 style={{
-                    fontSize: theme.typography.fontSize.base,
+                    paddingBottom: theme.spacing[3],
                     borderBottom: `1px solid ${theme.colors.border}`,
-                    paddingBottom: theme.spacing[2],
                 }}
             >
                 {category.title}
             </Title>
 
             <SkillList items={category.items} />
-        </div>
+        </Card>
     );
 }

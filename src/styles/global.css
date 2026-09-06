@@ -1,13 +1,68 @@
+:root {
+    --color-header: #f5f2ec;
+    --color-footer: #ebe6dc;
+
+    --color-background: #f5f2ec;
+    --color-surface: #fbf9f4;
+    --color-surface-alt: #ece8df;
+    --color-surface-hover: #e4ded3;
+
+    --color-border: #d4cec3;
+
+    --color-text-primary: #2d2c28;
+    --color-text-secondary: #5e5a52;
+    --color-text-muted: #746e64;
+
+    --color-action-primary: #2d2c28;
+    --color-action-primary-hover: #4a4740;
+    --color-link: #716b61;
+
+    --color-accent: #716b61;
+    --color-accent-soft: #e7dfd1;
+    --color-accent-line: #b9ad98;
+
+    --color-success: #237a57;
+    --color-success-soft: rgba(35, 122, 87, 0.18);
+
+    --font-body:
+        'DM Sans', Inter, system-ui, -apple-system, BlinkMacSystemFont,
+        'Segoe UI', sans-serif;
+    --font-heading: 'Instrument Serif', Georgia, serif;
+    --font-mono: 'Space Mono', 'SFMono-Regular', Consolas, monospace;
+}
+
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
 
+html {
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+}
+
 body {
-    background-color: #f7f5f2;
+    min-width: 320px;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+    font-family: var(--font-body);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+a {
+    color: inherit;
 }
 
 [id] {
@@ -15,18 +70,22 @@ body {
 }
 
 .portfolio-link {
-    color: #57534e;
+    color: var(--color-text-secondary);
     cursor: pointer;
-    transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 150ms ease;
 }
 
 .portfolio-link:hover {
-    color: #1c1917;
+    color: var(--color-text-primary);
 }
 
 .base-button {
     color: var(--button-color);
     background-color: var(--button-background);
+    transition:
+        color 150ms ease,
+        background-color 150ms ease,
+        border-color 150ms ease;
 }
 
 .base-button:hover {
@@ -38,16 +97,41 @@ body {
 .base-button:focus-visible,
 .form-input:focus-visible,
 .form-submit:focus-visible {
-    outline: 2px solid #1c1917;
+    outline: 2px solid var(--color-text-primary);
     outline-offset: 3px;
 }
 
+.form-input {
+    font-family: var(--font-body);
+}
+
+.form-input:focus-visible {
+    border-color: var(--color-text-primary);
+}
+
 .form-submit {
-    color: #faf9f7;
-    background-color: #1c1917;
-    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--color-surface);
+    background-color: var(--color-action-primary);
+    transition: background-color 150ms ease;
 }
 
 .form-submit:hover {
-    background-color: #292524;
+    background-color: var(--color-action-primary-hover);
+}
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+a,
+input,
+textarea {
+    -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+    color: var(--color-surface);
+    background-color: var(--color-action-primary);
 }

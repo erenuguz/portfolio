@@ -8,14 +8,18 @@ import Footer from '@/components/layout/Footer';
 
 export default function App() {
     return (
-        <div>
+        <>
             <Header />
-            <Hero />
-            <About />
-            <Skills />
-            <Projects />
-            <Contact />
+
+            <main>
+                <Hero />
+                <About />
+                <Skills />
+                <Projects />
+                <Contact />
+            </main>
+
             <Footer />
-        </div>
+        </>
     );
 }

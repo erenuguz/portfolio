@@ -1,4 +1,7 @@
 import {theme} from '@/styles/theme';
+import Card from '@/components/ui/Card';
+import Text from '@/components/common/Text';
+import Title from '@/components/common/Title';
 import {timelineData} from '@/data';
 
 export default function AboutTimeline() {
@@ -7,74 +10,48 @@ export default function AboutTimeline() {
             style={{
                 display: 'flex',
                 flexDirection: 'column',
-                flex: '1 1 320px',
-                gap: theme.spacing[8],
+                gap: theme.spacing[4],
+                minWidth: 0,
             }}
         >
             {timelineData.map((item) => (
-                <div
+                <Card
+                    as="article"
                     key={`${item.period}-${item.role}`}
                     style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        gap: theme.spacing[2],
-                        paddingLeft: theme.spacing[4],
-                        borderLeft: `2px solid ${theme.colors.border}`,
+                        borderLeft: `3px solid ${theme.colors.accentLine}`,
                     }}
                 >
                     <span
                         style={{
-                            fontSize: theme.typography.fontSize.sm,
-                            fontWeight: theme.typography.fontWeight.semibold,
+                            fontFamily: theme.typography.fontFamily.mono,
+                            fontSize: theme.typography.fontSize.xs,
+                            fontWeight: theme.typography.fontWeight.bold,
+                            lineHeight: theme.typography.lineHeight.normal,
+                            letterSpacing: '0.08em',
+                            textTransform: 'uppercase',
                             color: theme.colors.text.muted,
-                            fontFamily: theme.typography.fontFamily.sans,
                         }}
                     >
                         {item.period}
                     </span>
-                    <div
+
+                    <Title as="h3" variant="card">
+                        {item.role}
+                    </Title>
+
+                    <Text
+                        as="span"
+                        variant="small"
                         style={{
-                            display: 'flex',
-                            alignItems: 'baseline',
-                            gap: theme.spacing[2],
-                            flexWrap: 'wrap',
+                            color: theme.colors.text.muted,
                         }}
                     >
-                        <h3
-                            style={{
-                                fontSize: theme.typography.fontSize.lg,
-                                fontWeight:
-                                    theme.typography.fontWeight.bold,
-                                color: theme.colors.text.primary,
-                                margin: 0,
-                                fontFamily: theme.typography.fontFamily.sans,
-                            }}
-                        >
-                            {item.role}
-                        </h3>
-                        <span
-                            style={{
-                                fontSize: theme.typography.fontSize.base,
-                                color: theme.colors.text.secondary,
-                                fontFamily: theme.typography.fontFamily.sans,
-                            }}
-                        >
-                            — {item.company}
-                        </span>
-                    </div>
-                    <p
-                        style={{
-                            fontSize: theme.typography.fontSize.sm,
-                            color: theme.colors.text.secondary,
-                            lineHeight: '1.6',
-                            margin: 0,
-                            marginTop: theme.spacing[1],
-                            fontFamily: theme.typography.fontFamily.body,
-                        }}
-                    >
-                        {item.description}
-                    </p>
-                </div>
+                        {item.company}
+                    </Text>
+
+                    <Text variant="card">{item.description}</Text>
+                </Card>
             ))}
         </div>
     );

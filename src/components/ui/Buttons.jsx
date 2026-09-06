@@ -1,29 +1,37 @@
 import BaseButton from '@/components/ui/BaseButton';
 import {theme} from '@/styles/theme';
 
-const heroBase = {
-    padding: `${theme.spacing[3]} ${theme.spacing[6]}`,
-    fontSize: theme.typography.fontSize.base,
-    fontWeight: theme.typography.fontWeight.medium,
+const sharedButtonStyle = {
+    fontFamily: theme.typography.fontFamily.body,
+    fontWeight: theme.typography.fontWeight.semibold,
+    lineHeight: theme.typography.lineHeight.normal,
     borderRadius: theme.borderRadius.md,
+    whiteSpace: 'nowrap',
 };
 
-const cardBase = {
+const heroButtonStyle = {
+    ...sharedButtonStyle,
+    minHeight: theme.layout.heroControlHeight,
+    padding: `${theme.spacing[3]} ${theme.spacing[6]}`,
+    fontSize: theme.typography.fontSize.base,
+};
+
+const cardButtonStyle = {
+    ...sharedButtonStyle,
+    minHeight: theme.layout.controlHeight,
     padding: `${theme.spacing[2]} ${theme.spacing[4]}`,
     fontSize: theme.typography.fontSize.sm,
-    fontWeight: theme.typography.fontWeight.medium,
-    borderRadius: theme.borderRadius.md,
 };
 
 export function ProjectsButton() {
     return (
         <BaseButton
-            href="#projects"
             as="a"
+            href="#projects"
             style={{
-                ...heroBase,
-                backgroundColor: theme.colors.action.primary,
+                ...heroButtonStyle,
                 color: theme.colors.surface,
+                backgroundColor: theme.colors.action.primary,
             }}
             hoverBackground={theme.colors.action.primaryHover}
         >
@@ -35,12 +43,13 @@ export function ProjectsButton() {
 export function ContactButton() {
     return (
         <BaseButton
-            href="#contact"
             as="a"
+            href="#contact"
             style={{
-                ...heroBase,
-                backgroundColor: 'transparent',
+                ...heroButtonStyle,
                 color: theme.colors.text.secondary,
+                backgroundColor: 'transparent',
+                border: `1px solid ${theme.colors.border}`,
             }}
             hoverColor={theme.colors.text.primary}
             hoverBackground={theme.colors.surfaceHover}
@@ -53,14 +62,15 @@ export function ContactButton() {
 export function GithubButton({href}) {
     return (
         <BaseButton
-            href={href}
             as="a"
+            href={href}
             target="_blank"
             rel="noopener noreferrer"
             style={{
-                ...cardBase,
-                backgroundColor: 'transparent',
+                ...cardButtonStyle,
                 color: theme.colors.text.secondary,
+                backgroundColor: 'transparent',
+                border: `1px solid ${theme.colors.border}`,
             }}
             hoverColor={theme.colors.text.primary}
             hoverBackground={theme.colors.surfaceHover}
@@ -73,14 +83,15 @@ export function GithubButton({href}) {
 export function LiveButton({href}) {
     return (
         <BaseButton
-            href={href}
             as="a"
+            href={href}
             target="_blank"
             rel="noopener noreferrer"
             style={{
-                ...cardBase,
-                backgroundColor: theme.colors.action.primary,
+                ...cardButtonStyle,
                 color: theme.colors.surface,
+                backgroundColor: theme.colors.action.primary,
+                border: `1px solid ${theme.colors.action.primary}`,
             }}
             hoverBackground={theme.colors.action.primaryHover}
         >

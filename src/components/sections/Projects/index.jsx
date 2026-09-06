@@ -1,45 +1,27 @@
 import {theme} from '@/styles/theme';
-import Subtitle from '@/components/common/Subtitle';
-import Title from '@/components/common/Title';
+import Section from '@/components/layout/Section';
+import SectionHeader from '@/components/common/SectionHeader';
 import ProjectRow from '@/components/sections/Projects/ProjectRow';
 import {projectsData} from '@/data';
 
 export default function Projects() {
     return (
-        <section
-            style={{
-                padding: `${theme.spacing[24]} ${theme.spacing[8]}`,
-                display: 'flex',
-                justifyContent: 'center',
-                backgroundColor: theme.colors.surfaceAlt,
-            }}
-            id="projects"
-        >
+        <Section id="projects" backgroundColor={theme.colors.surfaceAlt}>
+            <SectionHeader eyebrow="Projeler" title="Öne çıkan çalışmalar." />
+
             <div
                 style={{
                     width: '100%',
-                    margin: '0 auto',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'flex-start',
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                    gap: theme.spacing[6],
+                    alignItems: 'stretch',
                 }}
             >
-                <Subtitle>PROJELER</Subtitle>
-
-                <Title>Öne çıkan çalışmalar.</Title>
-
-                <div
-                    style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        width: '100%',
-                    }}
-                >
-                    {projectsData.map((project) => (
-                        <ProjectRow key={project.name} project={project} />
-                    ))}
-                </div>
+                {projectsData.map((project) => (
+                    <ProjectRow key={project.name} project={project} />
+                ))}
             </div>
-        </section>
+        </Section>
     );
 }

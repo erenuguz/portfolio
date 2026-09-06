@@ -1,20 +1,43 @@
 import {theme} from '@/styles/theme';
 
-export default function Text({children, style = {}}) {
+const textVariants = {
+    body: {
+        fontSize: theme.typography.fontSize.lg,
+        lineHeight: theme.typography.lineHeight.body,
+    },
+
+    card: {
+        fontSize: theme.typography.fontSize.cardBody,
+        lineHeight: '1.6',
+    },
+
+    small: {
+        fontSize: theme.typography.fontSize.sm,
+        lineHeight: '1.6',
+    },
+};
+
+export default function Text({
+    children,
+    as: Component = 'p',
+    variant = 'body',
+    style = {},
+}) {
+    const variantStyle = textVariants[variant] ?? textVariants.body;
+
     return (
-        <p
+        <Component
             style={{
-                fontSize: theme.typography.fontSize.lg,
                 fontFamily: theme.typography.fontFamily.body,
                 fontWeight: theme.typography.fontWeight.normal,
                 color: theme.colors.text.secondary,
-                lineHeight: '1.7',
                 margin: 0,
-                marginBottom: theme.spacing[10],
+
+                ...variantStyle,
                 ...style,
             }}
         >
             {children}
-        </p>
+        </Component>
     );
 }

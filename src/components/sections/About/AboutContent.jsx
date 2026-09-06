@@ -7,8 +7,8 @@ export default function AboutContent() {
             style={{
                 display: 'flex',
                 flexDirection: 'column',
-                flex: '1 1 500px',
                 gap: theme.spacing[4],
+                minWidth: 0,
             }}
         >
             <Text>
@@ -19,6 +19,7 @@ export default function AboutContent() {
                 bir kod yığını değil; aynı zamanda temiz, ölçeklenebilir ve
                 sürdürülebilir bir mimariye sahip olmalıdır.
             </Text>
+
             <Text>
                 Geliştirme süreçlerinde takım çalışmasının ve iletişimin gücüne
                 inanıyorum. Kodun sadece bilgisayarlar tarafından değil, aynı

@@ -5,43 +5,16 @@ import Title from '@/components/common/Title';
 import Text from '@/components/common/Text';
 
 export default function Hero() {
-    const statusBadgeComponent = (
-        <div
-            style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: theme.spacing[2],
-                padding: `${theme.spacing[1]} ${theme.spacing[3]}`,
-                fontSize: theme.typography.fontSize.label,
-                fontFamily: theme.typography.fontFamily.mono,
-                fontWeight: theme.typography.fontWeight.bold,
-                color: theme.colors.accent,
-                marginBottom: theme.spacing[6],
-            }}
-        >
-            <span
-                style={{
-                    width: '8px',
-                    height: '8px',
-                    backgroundColor: '#10b981',
-                    borderRadius: theme.borderRadius.full,
-                    boxShadow: '0 0 0 2px rgba(16, 185, 129, 0.2)',
-                }}
-            ></span>
-            Projelere açık
-        </div>
-    );
-
     return (
         <section
+            id="home"
             style={{
-                padding: `${theme.spacing[20]} ${theme.spacing[8]}`,
                 display: 'flex',
                 justifyContent: 'center',
+                padding: theme.layout.heroPadding,
                 backgroundColor: theme.colors.background,
                 borderBottom: `1px solid ${theme.colors.border}`,
             }}
-            id="home"
         >
             <div
                 style={{
@@ -50,35 +23,83 @@ export default function Hero() {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'flex-start',
+                    gap: theme.spacing[8],
                 }}
             >
-                {/* Durum Notu */}
-                {statusBadgeComponent}
+                <div
+                    style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: theme.spacing[2],
+                        padding: `${theme.spacing[1]} ${theme.spacing[3]}`,
+                        color: theme.colors.status.success,
+                        backgroundColor: theme.colors.status.successSoft,
+                        borderRadius: theme.borderRadius.full,
+                        fontFamily: theme.typography.fontFamily.mono,
+                        fontSize: theme.typography.fontSize.xs,
+                        fontWeight: theme.typography.fontWeight.bold,
+                        lineHeight: theme.typography.lineHeight.normal,
+                        letterSpacing: '0.08em',
+                        textTransform: 'uppercase',
+                    }}
+                >
+                    <span
+                        aria-hidden="true"
+                        style={{
+                            width: '8px',
+                            height: '8px',
+                            flexShrink: 0,
+                            backgroundColor: theme.colors.status.success,
+                            borderRadius: theme.borderRadius.full,
+                        }}
+                    />
+                    Projelere açık
+                </div>
 
-                {/* Başlıklar */}
-                <Subtitle>YAZILIM MÜHENDİSİ</Subtitle>
+                <div
+                    style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'flex-start',
+                        gap: theme.spacing[3],
+                    }}
+                >
+                    <Subtitle>Yazılım Mühendisi</Subtitle>
 
-                <Title>
-                    <span style={{color: theme.colors.text.primary}}>
-                        Merhaba,
-                    </span>
-                    <span style={{color: theme.colors.action.link}}>
-                        {' '}
-                        ben Eren.
-                    </span>
-                </Title>
+                    <Title as="h1" variant="hero">
+                        <span
+                            style={{
+                                color: theme.colors.text.primary,
+                            }}
+                        >
+                            Merhaba,
+                        </span>
 
-                {/* Açıklama */}
-                <Text>
+                        <span
+                            style={{
+                                color: theme.colors.action.link,
+                            }}
+                        >
+                            {' '}
+                            ben Eren.
+                        </span>
+                    </Title>
+                </div>
+
+                <Text
+                    style={{
+                        maxWidth: theme.layout.readableWidth,
+                    }}
+                >
                     Ölçeklenebilir uygulamalar ve temiz arayüzler
                     geliştiriyorum. Backend ve frontend arasında rahat hareket
                     eden, çözüm odaklı bir yazılımcıyım.
                 </Text>
 
-                {/* Butonlar */}
                 <div
                     style={{
                         display: 'flex',
+                        alignItems: 'center',
                         gap: theme.spacing[4],
                         flexWrap: 'wrap',
                     }}

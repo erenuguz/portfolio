@@ -16,23 +16,27 @@ export default function SkillList({items}) {
                 <li
                     key={skill}
                     style={{
-                        fontFamily: theme.typography.fontFamily.mono,
-                        fontSize: theme.typography.fontSize.base,
-                        color: theme.colors.text.secondary,
                         display: 'flex',
                         alignItems: 'center',
-                        gap: theme.spacing[2],
+                        gap: theme.spacing[3],
+                        color: theme.colors.text.secondary,
+                        fontFamily: theme.typography.fontFamily.body,
+                        fontSize: theme.typography.fontSize.cardBody,
+                        fontWeight: theme.typography.fontWeight.normal,
+                        lineHeight: '1.6',
                     }}
                 >
                     <span
+                        aria-hidden="true"
                         style={{
                             width: '6px',
                             height: '6px',
-                            backgroundColor: theme.colors.text.muted,
-                            borderRadius: theme.borderRadius.full,
                             flexShrink: 0,
+                            backgroundColor: theme.colors.accentLine,
+                            borderRadius: theme.borderRadius.full,
                         }}
-                    ></span>
+                    />
+
                     {skill}
                 </li>
             ))}

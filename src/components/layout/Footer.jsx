@@ -1,5 +1,23 @@
 import {theme} from '@/styles/theme';
 
+const socialLinks = [
+    {
+        label: 'GitHub',
+        href: 'https://github.com/erenuguz',
+        external: true,
+    },
+    {
+        label: 'LinkedIn',
+        href: 'https://www.linkedin.com/in/erenuguz',
+        external: true,
+    },
+    {
+        label: 'E-posta',
+        href: 'mailto:erenn.uguz@gmail.com',
+        external: false,
+    },
+];
+
 export default function Footer() {
     const currentYear = new Date().getFullYear();
 
@@ -16,7 +34,7 @@ export default function Footer() {
             alignItems: 'center',
         },
         copyright: {
-            fontSize: theme.typography.fontSize.sm,
+            fontSize: theme.typography.fontSize.xs,
             color: theme.colors.text.muted,
             fontFamily: theme.typography.fontFamily.mono,
         },
@@ -41,62 +59,33 @@ export default function Footer() {
     return (
         <footer style={styles.footer}>
             <div style={styles.container}>
-                {/* Sol Taraf: Telif Hakkı */}
                 <div style={styles.copyright}>
-                    © {currentYear} Eren. Tüm hakları saklıdır.
+                    © {currentYear} Eren Uğuz. Tüm hakları saklıdır.
                 </div>
 
-                {/* Sağ Taraf: Sosyal Linkler */}
-                <ul style={styles.nav}>
-                    <li>
-                        <a
-                            href="https://github.com/erenuguz"
-                            style={styles.link}
-                            onMouseEnter={(e) =>
-                                (e.target.style.color =
-                                    theme.colors.text.primary)
-                            }
-                            onMouseLeave={(e) =>
-                                (e.target.style.color =
-                                    theme.colors.text.secondary)
-                            }
-                        >
-                            GitHub
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="https://www.linkedin.com/in/erenuguz"
-                            style={styles.link}
-                            onMouseEnter={(e) =>
-                                (e.target.style.color =
-                                    theme.colors.text.primary)
-                            }
-                            onMouseLeave={(e) =>
-                                (e.target.style.color =
-                                    theme.colors.text.secondary)
-                            }
-                        >
-                            LinkedIn
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="mailto:erenn.uguz@gmail.com"
-                            style={styles.link}
-                            onMouseEnter={(e) =>
-                                (e.target.style.color =
-                                    theme.colors.text.primary)
-                            }
-                            onMouseLeave={(e) =>
-                                (e.target.style.color =
-                                    theme.colors.text.secondary)
-                            }
-                        >
-                            E-posta
-                        </a>
-                    </li>
-                </ul>
+                <nav aria-label="Sosyal medya bağlantıları">
+                    <ul style={styles.nav}>
+                        {socialLinks.map((link) => (
+                            <li key={link.label}>
+                                <a
+                                    href={link.href}
+                                    className="portfolio-link"
+                                    style={styles.link}
+                                    target={
+                                        link.external ? '_blank' : undefined
+                                    }
+                                    rel={
+                                        link.external
+                                            ? 'noopener noreferrer'
+                                            : undefined
+                                    }
+                                >
+                                    {link.label}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
             </div>
         </footer>
     );

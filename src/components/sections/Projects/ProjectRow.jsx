@@ -1,23 +1,25 @@
 import {theme} from '@/styles/theme';
 import {GithubButton, LiveButton} from '@/components/ui/Buttons';
+import Card from '@/components/ui/Card';
 import Text from '@/components/common/Text';
-import ProjectTag from '@/components/sections/Projects/ProjectTag';
 import Title from '@/components/common/Title';
+import ProjectTag from '@/components/sections/Projects/ProjectTag';
 
 export default function ProjectRow({project}) {
+    const hasGithubLink = Boolean(project.github) && project.github !== '#';
+
+    const hasLiveLink = Boolean(project.live) && project.live !== '#';
+
+    const hasAnyLink = hasGithubLink || hasLiveLink;
+
     return (
-        <div
+        <Card
+            as="article"
             style={{
-                display: 'flex',
+                height: '100%',
                 justifyContent: 'space-between',
-                alignItems: 'flex-start',
-                padding: `${theme.spacing[8]} 0`,
-                borderBottom: `1px solid ${theme.colors.border}`,
-                gap: theme.spacing[6],
-                flexWrap: 'wrap',
             }}
         >
-            {/* Sol Taraf: Proje Detayları */}
             <div
                 style={{
                     display: 'flex',
@@ -25,26 +27,31 @@ export default function ProjectRow({project}) {
                     gap: theme.spacing[4],
                 }}
             >
-                <Title style={{fontSize: theme.typography.fontSize.base}}>
+                <Title as="h3" variant="card">
                     {project.name}
                 </Title>
 
-                <Text>{project.description}</Text>
+                <Text variant="card">{project.description}</Text>
 
                 <ProjectTag tags={project.tags} />
             </div>
 
-            {/* Sağ Taraf: Aksiyon Butonları */}
-            <div
-                style={{
-                    display: 'flex',
-                    gap: theme.spacing[4],
-                    flexShrink: 0,
-                }}
-            >
-                <GithubButton href={project.github} />
-                <LiveButton href={project.live} />
-            </div>
-        </div>
+            {hasAnyLink && (
+                <div
+                    style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: theme.spacing[3],
+                        flexWrap: 'wrap',
+                        paddingTop: theme.spacing[2],
+                        marginTop: 'auto',
+                    }}
+                >
+                    {hasGithubLink && <GithubButton href={project.github} />}
+
+                    {hasLiveLink && <LiveButton href={project.live} />}
+                </div>
+            )}
+        </Card>
     );
 }

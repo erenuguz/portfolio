@@ -1,49 +1,26 @@
 import {theme} from '@/styles/theme';
-import Subtitle from '@/components/common/Subtitle';
-import Title from '@/components/common/Title';
+import Section from '@/components/layout/Section';
+import SectionHeader from '@/components/common/SectionHeader';
 import AboutContent from '@/components/sections/About/AboutContent';
 import AboutTimeline from '@/components/sections/About/AboutTimeline';
 
 export default function About() {
     return (
-        <section
-            style={{
-                padding: `${theme.spacing[24]} ${theme.spacing[8]}`,
-                display: 'flex',
-                justifyContent: 'center',
-                backgroundColor: theme.colors.surfaceAlt,
-            }}
-            id="about"
-        >
+        <Section id="about" backgroundColor={theme.colors.surfaceAlt}>
+            <SectionHeader eyebrow="Hakkımda" title="Biraz kendimden." />
+
             <div
                 style={{
                     width: '100%',
-                    
-                    margin: '0 auto',
                     display: 'flex',
                     flexDirection: 'column',
-                    alignItems: 'flex-start',
+                    alignItems: 'start',
+                    gap: theme.spacing[8],
                 }}
             >
-                <Subtitle>HAKKIMDA</Subtitle>
-
-                <Title>Biraz kendimden.</Title>
-
-                <div
-                    style={{
-                        display: 'flex',
-                        flexWrap: 'wrap',
-                        gap: theme.spacing[16],
-                        width: '100%',
-                    }}
-                >
-                    {/* Metinler */}
-                    <AboutContent />
-
-                    {/* Timeline */}
-                    <AboutTimeline />
-                </div>
+                <AboutContent />
+                <AboutTimeline />
             </div>
-        </section>
+        </Section>
     );
 }

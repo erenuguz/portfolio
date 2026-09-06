@@ -5,23 +5,26 @@ export default function ProjectTag({tags}) {
         <div
             style={{
                 display: 'flex',
+                alignItems: 'center',
                 gap: theme.spacing[2],
                 flexWrap: 'wrap',
-                marginTop: theme.spacing[2],
             }}
         >
             {tags.map((tag) => (
                 <span
                     key={tag}
                     style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
                         fontFamily: theme.typography.fontFamily.mono,
                         fontSize: theme.typography.fontSize.xs,
+                        fontWeight: theme.typography.fontWeight.normal,
+                        lineHeight: theme.typography.lineHeight.normal,
                         padding: `${theme.spacing[1]} ${theme.spacing[2]}`,
-                        backgroundColor: theme.colors.surfaceHover,
                         color: theme.colors.text.secondary,
-                        borderRadius: theme.borderRadius.sm,
+                        backgroundColor: theme.colors.accentSoft,
                         border: `1px solid ${theme.colors.border}`,
-                        display: 'inline-block',
+                        borderRadius: theme.borderRadius.sm,
                     }}
                 >
                     {tag}

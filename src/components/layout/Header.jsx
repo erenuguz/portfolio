@@ -24,7 +24,8 @@ export default function Header() {
             fontWeight: theme.typography.fontWeight.bold,
             color: theme.colors.text.primary,
             textDecoration: 'none',
-            letterSpacing: '-0.025em',fontFamily: theme.typography.fontFamily.heading,
+            letterSpacing: '-0.025em',
+            fontFamily: theme.typography.fontFamily.heading,
         },
         nav: {
             display: 'flex',
@@ -38,7 +39,6 @@ export default function Header() {
             fontSize: theme.typography.fontSize.sm,
             fontWeight: theme.typography.fontWeight.semibold,
             textDecoration: 'none',
-            color: theme.colors.text.secondary,
             letterSpacing: '0.16em',
         },
     };

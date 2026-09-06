@@ -1,67 +1,61 @@
 export const theme = {
     colors: {
-        // Header ve ana sayfa zemini
-        header: '#f5f2ec',
-        background: '#f5f2ec',
+        header: 'var(--color-header)',
+        footer: 'var(--color-footer)',
 
-        // Footer için aynı renk ailesinde biraz daha koyu ton
-        footer: '#ebe6dc',
+        background: 'var(--color-background)',
+        surface: 'var(--color-surface)',
+        surfaceAlt: 'var(--color-surface-alt)',
+        surfaceHover: 'var(--color-surface-hover)',
 
-        // Kart ve içerik yüzeyleri
-        surface: '#fbf9f4',
-        surfaceAlt: '#ece8df',
-        surfaceHover: '#eae5dc',
-
-        // Çizgiler ve kenarlıklar
-        border: '#d9d4ca',
+        border: 'var(--color-border)',
 
         text: {
-            primary: '#2d2c28',
-            secondary: '#5e5a52',
-            muted: '#958d80',
+            primary: 'var(--color-text-primary)',
+            secondary: 'var(--color-text-secondary)',
+            muted: 'var(--color-text-muted)',
         },
 
         action: {
-            primary: '#2d2c28',
-            primaryHover: '#4a4740',
-            link: '#716b61',
+            primary: 'var(--color-action-primary)',
+            primaryHover: 'var(--color-action-primary-hover)',
+            link: 'var(--color-link)',
         },
 
-        // Ek vurgu renkleri
-        accent: '#8a7d67',
-        accentSoft: '#e7dfd1',
-        accentLine: '#b9ad98',
+        accent: 'var(--color-accent)',
+        accentSoft: 'var(--color-accent-soft)',
+        accentLine: 'var(--color-accent-line)',
+
+        status: {
+            success: 'var(--color-success)',
+            successSoft: 'var(--color-success-soft)',
+        },
     },
 
     typography: {
         fontFamily: {
-            // Mevcut Header kodun theme.typography.fontFamily.sans kullanıyor
-            sans: '"DM Sans", Inter, system-ui, sans-serif',
-
-            // Normal içerik metinleri
-            body: '"DM Sans", Inter, system-ui, sans-serif',
-
-            // Büyük başlıklar ve logo harfi
-            heading: '"Instrument Serif", Georgia, serif',
-
-            // Küçük teknik başlıklar ve etiketler
-            mono: '"Space Mono", "SFMono-Regular", monospace',
+            sans: 'var(--font-body)',
+            body: 'var(--font-body)',
+            heading: 'var(--font-heading)',
+            mono: 'var(--font-mono)',
         },
 
         fontSize: {
-            xs: '0.75rem', // 12px
-            sm: '0.875rem', // 14px
-            base: '1rem', // 16px
-            lg: '1.125rem', // 18px
-            xl: '1.25rem', // 20px
-            '2xl': '1.5rem', // 24px
-            '3xl': '1.875rem', // 30px
-            '4xl': '2.25rem', // 36px
-            '5xl': '3rem', // 48px
+            xs: '0.75rem',
+            sm: '0.875rem',
+            base: '1rem',
+            lg: '1.125rem',
+            xl: '1.25rem',
+            '2xl': '1.5rem',
+            '3xl': '1.875rem',
+            '4xl': '2.25rem',
+            '5xl': '3rem',
 
-            // Ek tasarım değerleri
-            label: '0.625rem', // 10px
-            display: 'clamp(4.8rem, 8.6vw, 8.4rem)',
+            label: '0.75rem',
+            cardTitle: '1.25rem',
+            cardBody: '1rem',
+            sectionTitle: 'clamp(2.5rem, 6vw, 3rem)',
+            display: 'clamp(3.5rem, 8vw, 7rem)',
         },
 
         fontWeight: {
@@ -72,36 +66,36 @@ export const theme = {
         },
 
         lineHeight: {
-            tight: '0.86',
+            tight: '1',
+            heading: '1.1',
             normal: '1.5',
+            body: '1.7',
             relaxed: '1.8',
         },
     },
 
     spacing: {
-        1: '0.25rem', // 4px
-        2: '0.5rem', // 8px
-        3: '0.75rem', // 12px
-        4: '1rem', // 16px
-        6: '1.5rem', // 24px
-        8: '2rem', // 32px
-        12: '3rem', // 48px
-        16: '4rem', // 64px
-        24: '6rem', // 96px
-
-        // Ek aralıklar
-        5: '1.25rem', // 20px
-        7: '1.75rem', // 28px
-        10: '2.5rem', // 40px
-        14: '3.5rem', // 56px
-        20: '5rem', // 80px
+        1: '0.25rem',
+        2: '0.5rem',
+        3: '0.75rem',
+        4: '1rem',
+        5: '1.25rem',
+        6: '1.5rem',
+        7: '1.75rem',
+        8: '2rem',
+        10: '2.5rem',
+        12: '3rem',
+        14: '3.5rem',
+        16: '4rem',
+        20: '5rem',
+        24: '6rem',
     },
 
     borderRadius: {
-        sm: '0.5rem', // 8px
-        md: '0.75rem', // 12px
-        lg: '1rem', // 16px
-        xl: '2rem', // 32px
+        sm: '0.5rem',
+        md: '0.75rem',
+        lg: '1rem',
+        xl: '2rem',
         full: '9999px',
     },
 
@@ -118,6 +112,17 @@ export const theme = {
 
     layout: {
         contentMaxWidth: '1200px',
+        readableWidth: '720px',
+
+        sectionPadding: 'clamp(4rem, 8vw, 6rem) clamp(1.25rem, 4vw, 2rem)',
+
+        heroPadding: 'clamp(4rem, 8vw, 5rem) clamp(1.25rem, 4vw, 2rem)',
+
+        cardPadding: '1.5rem',
+        cardGap: '1rem',
+
+        controlHeight: '2.75rem',
+        heroControlHeight: '3rem',
     },
 
     breakpoints: {
