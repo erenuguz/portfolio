@@ -1,128 +1,46 @@
-import {theme} from '@/styles/theme';
 import Card from '@/components/ui/Card';
+import Input from '@/components/ui/Input';
+import Textarea from '@/components/ui/Textarea';
 
 export default function ContactForm() {
-    const inputStyle = {
-        width: '100%',
-        padding: theme.spacing[3],
-        color: theme.colors.text.primary,
-        backgroundColor: theme.colors.background,
-        border: `1px solid ${theme.colors.border}`,
-        borderRadius: theme.borderRadius.md,
-        fontFamily: theme.typography.fontFamily.body,
-        fontSize: theme.typography.fontSize.base,
-        lineHeight: theme.typography.lineHeight.normal,
-        transition: theme.transitions.fast,
-    };
-
-    const labelStyle = {
-        color: theme.colors.text.primary,
-        fontFamily: theme.typography.fontFamily.body,
-        fontSize: theme.typography.fontSize.sm,
-        fontWeight: theme.typography.fontWeight.semibold,
-        lineHeight: theme.typography.lineHeight.normal,
-    };
-
-    const inputGroupStyle = {
-        display: 'flex',
-        flexDirection: 'column',
-        gap: theme.spacing[2],
-        minWidth: 0,
-    };
+    function handleSubmit(e) {
+        e.preventDefault();
+        // form gönderim mantığı buraya gelecek (email servisi, API vs.)
+    }
 
     return (
-        <Card
-            as="form"
-            style={{
-                width: '100%',
-                maxWidth: '800px',
-                gap: theme.spacing[6],
-            }}
-            onSubmit={(event) => event.preventDefault()}
-        >
-            <div
-                style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-                    gap: theme.spacing[6],
-                }}
+        <Card gap="20px" style={{maxWidth: '560px', width: '100%'}}>
+            <form
+                onSubmit={handleSubmit}
+                style={{display: 'flex', flexDirection: 'column', gap: '20px'}}
             >
-                <div style={inputGroupStyle}>
-                    <label style={labelStyle} htmlFor="name">
-                        Ad Soyad
-                    </label>
-
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        className="form-input"
-                        style={inputStyle}
-                    />
+                <div style={{display: 'flex', gap: '16px', flexWrap: 'wrap'}}>
+                    <Input label="Ad Soyad" name="name" required />
+                    <Input label="E-posta" name="email" type="email" required />
                 </div>
 
-                <div style={inputGroupStyle}>
-                    <label style={labelStyle} htmlFor="email">
-                        E-posta
-                    </label>
+                <Input label="Konu" name="subject" required />
 
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        className="form-input"
-                        style={inputStyle}
-                    />
-                </div>
-            </div>
+                <Textarea label="Mesaj" name="message" required />
 
-            <div style={inputGroupStyle}>
-                <label style={labelStyle} htmlFor="subject">
-                    Konu
-                </label>
-
-                <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    className="form-input"
-                    style={inputStyle}
-                />
-            </div>
-
-            <div style={inputGroupStyle}>
-                <label style={labelStyle} htmlFor="message">
-                    Mesaj
-                </label>
-
-                <textarea
-                    id="message"
-                    name="message"
-                    className="form-input"
+                <button
+                    type="submit"
                     style={{
-                        ...inputStyle,
-                        minHeight: '150px',
-                        resize: 'vertical',
+                        alignSelf: 'flex-start',
+                        fontFamily: 'system-ui, sans-serif',
+                        fontSize: '14px',
+                        fontWeight: 600,
+                        color: '#FFFFFF',
+                        backgroundColor: '#1A1A1A',
+                        padding: '10px 24px',
+                        border: 'none',
+                        borderRadius: '8px',
+                        cursor: 'pointer',
                     }}
-                />
-            </div>
-
-            <button
-                type="submit"
-                className="form-submit"
-                style={{
-                    alignSelf: 'flex-start',
-                    padding: `${theme.spacing[3]} ${theme.spacing[8]}`,
-                    border: 'none',
-                    borderRadius: theme.borderRadius.md,
-                    fontFamily: theme.typography.fontFamily.body,
-                    fontSize: theme.typography.fontSize.base,
-                    fontWeight: theme.typography.fontWeight.semibold,
-                    cursor: 'pointer',
-                }}
-            >
-                Gönder
-            </button>
+                >
+                    Gönder
+                </button>
+            </form>
         </Card>
     );
 }

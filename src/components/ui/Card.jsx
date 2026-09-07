@@ -1,8 +1,9 @@
-import {theme} from '@/styles/theme';
-
 export default function Card({
     children,
     as: Component = 'div',
+    padding = '20px',
+    gap = '4px',
+    align = 'stretch',
     style = {},
     ...rest
 }) {
@@ -11,16 +12,13 @@ export default function Card({
             style={{
                 display: 'flex',
                 flexDirection: 'column',
-                width: '100%',
-                minWidth: 0,
-                overflowWrap: 'break-word',
-                gap: theme.layout.cardGap,
-                padding: theme.layout.cardPadding,
-                color: theme.colors.text.primary,
-                backgroundColor: theme.colors.surface,
-                border: `1px solid ${theme.colors.border}`,
-                borderRadius: theme.borderRadius.lg,
-                boxShadow: theme.shadows.sm,
+                alignItems: align,
+                gap,
+                padding,
+                backgroundColor: '#FFFFFF',
+                border: '1px solid #E5E2DA',
+                borderRadius: '12px',
+                boxShadow: '0 1px 3px rgba(0, 0, 0, 0.04)',
                 ...style,
             }}
             {...rest}

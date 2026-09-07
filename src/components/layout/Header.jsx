@@ -1,45 +1,56 @@
-import {theme} from '@/styles/theme';
-
 export default function Header() {
     const styles = {
         header: {
-            backgroundColor: theme.colors.header,
-            borderBottom: `1px solid ${theme.colors.border}`,
+            backgroundColor: '#FFFFFF',
+            borderBottom: '1px solid #E5E2DA',
             position: 'sticky',
             top: 0,
             zIndex: 50,
         },
         container: {
+            maxWidth: '1280px',
             width: '100%',
-
             margin: '0 auto',
             boxSizing: 'border-box',
-            padding: `${theme.spacing[2]} ${theme.spacing[8]}`,
+            padding: '16px 32px',
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
         },
         logo: {
-            fontSize: theme.typography.fontSize['4xl'],
-            fontWeight: theme.typography.fontWeight.bold,
-            color: theme.colors.text.primary,
+            fontSize: '28px',
+            fontWeight: 700,
+            color: '#1A1A1A',
             textDecoration: 'none',
             letterSpacing: '-0.025em',
-            fontFamily: theme.typography.fontFamily.heading,
+            fontFamily: 'Georgia, "Times New Roman", serif',
         },
         nav: {
             display: 'flex',
-            gap: theme.spacing[6],
+            alignItems: 'center',
+            gap: '32px',
             listStyle: 'none',
             margin: 0,
             padding: 0,
-            fontFamily: theme.typography.fontFamily.sans,
+            fontFamily: 'system-ui, -apple-system, sans-serif',
         },
         link: {
-            fontSize: theme.typography.fontSize.sm,
-            fontWeight: theme.typography.fontWeight.semibold,
+            fontSize: '13px',
+            fontWeight: 600,
+            color: '#4A4A4A',
             textDecoration: 'none',
-            letterSpacing: '0.16em',
+            letterSpacing: '0.12em',
+            textTransform: 'uppercase',
+        },
+        ctaButton: {
+            fontSize: '13px',
+            fontWeight: 600,
+            color: '#FFFFFF',
+            backgroundColor: '#1A1A1A',
+            padding: '10px 20px',
+            borderRadius: '6px',
+            textDecoration: 'none',
+            letterSpacing: '0.04em',
         },
     };
 
@@ -47,7 +58,6 @@ export default function Header() {
         {label: 'Hakkımda', href: '#about'},
         {label: 'Yetenekler', href: '#skills'},
         {label: 'Projeler', href: '#projects'},
-        {label: 'İletişim', href: '#contact'},
     ];
 
     return (
@@ -71,6 +81,11 @@ export default function Header() {
                             </a>
                         </li>
                     ))}
+                    <li>
+                        <a href="#contact" style={styles.ctaButton}>
+                            İletişim
+                        </a>
+                    </li>
                 </ul>
             </div>
         </header>
