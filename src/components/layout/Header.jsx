@@ -1,92 +1,77 @@
-export default function Header() {
-    const styles = {
-        header: {
-            backgroundColor: '#FFFFFF',
-            borderBottom: '1px solid #E5E2DA',
-            position: 'sticky',
-            top: 0,
-            zIndex: 50,
-        },
-        container: {
-            maxWidth: '1280px',
-            width: '100%',
-            margin: '0 auto',
-            boxSizing: 'border-box',
-            padding: '16px 32px',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-        },
-        logo: {
-            fontSize: '28px',
-            fontWeight: 700,
-            color: '#1A1A1A',
-            textDecoration: 'none',
-            letterSpacing: '-0.025em',
-            fontFamily: 'Georgia, "Times New Roman", serif',
-        },
-        nav: {
-            display: 'flex',
-            alignItems: 'center',
-            gap: '32px',
-            listStyle: 'none',
-            margin: 0,
-            padding: 0,
-            fontFamily: 'system-ui, -apple-system, sans-serif',
-        },
-        link: {
-            fontSize: '13px',
-            fontWeight: 600,
-            color: '#4A4A4A',
-            textDecoration: 'none',
-            letterSpacing: '0.12em',
-            textTransform: 'uppercase',
-        },
-        ctaButton: {
-            fontSize: '13px',
-            fontWeight: 600,
-            color: '#FFFFFF',
-            backgroundColor: '#1A1A1A',
-            padding: '10px 20px',
-            borderRadius: '6px',
-            textDecoration: 'none',
-            letterSpacing: '0.04em',
-        },
-    };
+import {useState} from 'react';
 
-    const navItems = [
-        {label: 'Hakkımda', href: '#about'},
-        {label: 'Yetenekler', href: '#skills'},
-        {label: 'Projeler', href: '#projects'},
-    ];
+import Button from '@/components/ui/Button';
+import Icon from '@/components/ui/Icon';
+import {navigationLinks} from '@/data/navigation';
+
+import './Header.css';
+
+export default function Header() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    function closeMenu() {
+        setIsMenuOpen(false);
+    }
+
+    function toggleMenu() {
+        setIsMenuOpen((currentValue) => !currentValue);
+    }
 
     return (
-        <header style={styles.header}>
-            <div style={styles.container}>
-                {/* Logo Bölümü */}
-                <a href="#home" style={styles.logo}>
+        <header className="site-header">
+            <div className="site-header__container">
+                <a
+                    href="#home"
+                    className="site-header__logo"
+                    onClick={closeMenu}
+                >
                     Eren Uğuz
                 </a>
 
-                {/* Navigasyon Linkleri */}
-                <ul style={styles.nav}>
-                    {navItems.map((item) => (
-                        <li key={item.href}>
-                            <a
-                                href={item.href}
-                                className="portfolio-link"
-                                style={styles.link}
-                            >
-                                {item.label}
-                            </a>
-                        </li>
-                    ))}
-                    <li>
-                        <a href="#contact" style={styles.ctaButton}>
-                            İletişim
-                        </a>
-                    </li>
-                </ul>
+                <button
+                    type="button"
+                    className="site-header__toggle"
+                    aria-label={isMenuOpen ? 'Menüyü kapat' : 'Menüyü aç'}
+                    aria-expanded={isMenuOpen}
+                    aria-controls="main-navigation"
+                    onClick={toggleMenu}
+                >
+                    <Icon name={isMenuOpen ? 'close' : 'menu'} size={22} />
+                </button>
+
+                <nav
+                    id="main-navigation"
+                    aria-label="Ana navigasyon"
+                    className={[
+                        'site-header__nav',
+                        isMenuOpen && 'site-header__nav--open',
+                    ]
+                        .filter(Boolean)
+                        .join(' ')}
+                >
+                    <ul className="site-header__list">
+                        {navigationLinks.map((item) => (
+                            <li key={item.href}>
+                                <a
+                                    href={item.href}
+                                    className="site-header__link"
+                                    onClick={closeMenu}
+                                >
+                                    {item.label}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+
+                    <Button
+                        href="#contact"
+                        size="small"
+                        className="site-header__contact"
+                        onClick={closeMenu}
+                    >
+                        İletişim
+                    </Button>
+                </nav>
             </div>
         </header>
     );

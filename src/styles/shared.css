@@ -1,0 +1,259 @@
+/* Section */
+
+.section {
+    width: 100%;
+    padding: 80px 0;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e2da;
+}
+
+.section--compact {
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+
+.section--none {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.section--dark {
+    color: #ffffff;
+    background-color: #1a1a1a;
+    border-bottom-color: #1a1a1a;
+}
+
+.section--muted {
+    background-color: #faf9f6;
+}
+
+.section__container {
+    width: 100%;
+    margin: 0 auto;
+    padding-right: 32px;
+    padding-left: 32px;
+}
+
+.section__container--wide {
+    max-width: 1280px;
+}
+
+.section__container--content {
+    max-width: 900px;
+}
+
+.section__container--reading {
+    max-width: 800px;
+}
+
+.section__full-bleed {
+    width: 100%;
+}
+
+@media (max-width: 640px) {
+    .section {
+        padding-top: 56px;
+        padding-bottom: 56px;
+    }
+
+    .section--compact {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .section--none {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .section__container {
+        padding-right: 24px;
+        padding-left: 24px;
+    }
+}
+
+/* Section header */
+
+.section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.section-header__indicator {
+    width: 3px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 999px;
+    background-color: #1e7b34;
+}
+
+.section-header__content {
+    min-width: 0;
+}
+
+.section-header__title {
+    margin: 0;
+    color: #1a1a1a;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+}
+
+.section-header__description {
+    max-width: 520px;
+    margin: 6px 0 0;
+    color: #6b6b6b;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.section--dark .section-header__title {
+    color: #ffffff;
+}
+
+.section--dark .section-header__description {
+    color: #c9c4b8;
+}
+
+/* Card */
+
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: var(--card-background, #ffffff);
+    border: 1px solid #e5e2da;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.card--compact {
+    padding: 16px;
+}
+
+.card--comfortable {
+    padding: 24px;
+}
+
+.card--flat {
+    box-shadow: none;
+}
+
+.card--interactive {
+    transition:
+        transform 180ms ease,
+        box-shadow 180ms ease,
+        border-color 180ms ease;
+}
+
+.card--interactive:hover {
+    transform: translateY(-3px);
+    border-color: #d4d0c6;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.07);
+}
+
+/* Button */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 42px;
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    transition:
+        color 160ms ease,
+        background-color 160ms ease,
+        border-color 160ms ease,
+        transform 160ms ease;
+}
+
+.button:hover {
+    transform: translateY(-1px);
+}
+
+.button:active {
+    transform: translateY(0);
+}
+
+.button--primary {
+    color: #ffffff;
+    background-color: #1a1a1a;
+}
+
+.button--primary:hover {
+    background-color: #343434;
+}
+
+.button--secondary {
+    color: #1a1a1a;
+    background-color: #ffffff;
+    border-color: #d8d5cc;
+}
+
+.button--secondary:hover {
+    background-color: #f5f4f0;
+    border-color: #c4c0b6;
+}
+
+.button--light {
+    color: #1a1a1a;
+    background-color: #ffffff;
+}
+
+.button--light:hover {
+    background-color: #f3f2ee;
+}
+
+.button--small {
+    min-height: 36px;
+    padding: 8px 14px;
+    font-size: 13px;
+}
+
+.button--large {
+    min-height: 46px;
+    padding: 12px 22px;
+    font-size: 15px;
+}
+
+.button--full {
+    width: 100%;
+}
+
+/* Responsive */
+
+@media (max-width: 640px) {
+    .section {
+        padding: 56px 24px;
+    }
+
+    .section--compact {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .section-header__title {
+        font-size: 26px;
+    }
+
+    .section-header__description {
+        font-size: 14px;
+    }
+
+    .button {
+        min-height: 44px;
+    }
+}

@@ -1,0 +1,41 @@
+.contact__container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 560px;
+    gap: 20px;
+}
+
+.contact-form__fields {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form__row {
+    display: flex;
+    gap: 16px;
+}
+
+.contact-form__submit {
+    align-self: flex-start;
+}
+
+@media (max-width: 640px) {
+    .contact__container {
+        gap: 24px;
+    }
+
+    .contact-form__row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .contact-form__submit {
+        width: 100%;
+    }
+}

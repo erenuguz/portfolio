@@ -1,25 +1,32 @@
+import {navigationLinks} from './navigation';
+
 export const footerData = {
+    name: 'Eren Uğuz',
+    role: 'Full-Stack Yazılım Mühendisi',
+    copyrightName: 'Eren Uğuz',
+
     columns: [
         {
             title: 'Keşfet',
-            links: [
-                {label: 'Hakkımda', href: '#about'},
-                {label: 'Yetenekler', href: '#skills'},
-                {label: 'Projeler', href: '#projects'},
-                {label: 'İletişim', href: '#contact'},
-            ],
+            links: [...navigationLinks, {label: 'İletişim', href: '#contact'}],
         },
         {
             title: 'Sosyal',
             links: [
-                {label: 'GitHub', href: 'https://github.com/kullaniciadi'},
                 {
-                    label: 'LinkedIn',
-                    href: 'https://linkedin.com/in/kullaniciadi',
+                    label: 'GitHub',
+                    href: 'https://github.com/erenuguz',
+                    external: true,
                 },
-                {label: 'E-posta', href: 'mailto:eren@example.com'},
             ],
         },
     ],
-    copyright: '© 2026 Eren Uğuz. Tüm hakları saklıdır.',
+
+    socials: [
+        {
+            platform: 'GitHub',
+            href: 'https://github.com/erenuguz',
+            icon: 'github',
+        },
+    ],
 };

@@ -1,58 +1,54 @@
 export const projectsData = [
     {
+        id: 'qr-menu-system',
         name: 'QR Menü Sistemi',
         description:
-            'Web tabanlı, dinamik dijital QR menü yönetim sistemi. Custom hook mimarisi, çevre değişkenleri ile güvenlik yapılandırması ve sub-domain yönlendirme işlemleri içerir.',
-        tags: ['React', 'Vite', 'Firebase Firestore', 'CSS'],
+            'Web tabanlı, dinamik dijital QR menü yönetim sistemi. Firebase altyapısı, restoran yönetimi ve müşteriye özel menü sayfaları içerir.',
+        tags: ['React', 'Vite', 'Firebase', 'CSS'],
         github: 'https://github.com/erenuguz/QR-Menu-Sistemi',
         live: 'https://scanmenu.com.tr',
     },
     {
+        id: 'skynet-chat-app',
         name: 'Skynet Chat App',
         description:
-            'Gerçek zamanlı mesajlaşma uygulaması. Firebase yetkilendirme entegrasyonu, chat odası veri yapıları ve çapraz platform derleme özellikleri ile geliştirildi.',
-        tags: ['Android', 'Flutter', 'Firebase'],
-        github: 'https://github.com/erenuguz/QR-Menu-Sistemi',
-        live: 'https://scanmenu.com.tr',
-    },
-    {
-        name: 'ESP32-SmartParking-GUI',
+            'Gerçek zamanlı veri senkronizasyonu ve kullanıcı kimlik doğrulama altyapısına sahip mesajlaşma uygulaması.',
+        tags: ['Android', 'Flutter', 'Firebase', 'Realtime'],
+        github: 'https://github.com/erenuguz/Skynet-Chat-App',
+        live: null,
+    },{
+        id: 'skynet-chat-app',
+        name: 'Skynet Chat App',
         description:
-            'Mesafe sensörleri, OLED ekranlar ve servo motorlar kullanılarak geliştirilmiş, fiziksel sensör verilerini bir masaüstü arayüz ile eşleştiren akıllı otopark sistemi prototipi.',
-        tags: ['ESP32', 'C++', 'Arduino IDE', 'Hardware'],
-        github: 'https://github.com/erenuguz/QR-Menu-Sistemi',
-        live: 'https://scanmenu.com.tr',
-    },
-    {
-        name: 'MarketFlow POS',
+            'Gerçek zamanlı veri senkronizasyonu ve kullanıcı kimlik doğrulama altyapısına sahip mesajlaşma uygulaması.',
+        tags: ['Android', 'Flutter', 'Firebase', 'Realtime'],
+        github: 'https://github.com/erenuguz/Skynet-Chat-App',
+        live: null,
+    },{
+        id: 'skynet-chat-app',
+        name: 'Skynet Chat App',
         description:
-            'Geniş kapsamlı perakende yönetim sistemi. Veritabanı bağlantı komut dosyaları, özel proje şemaları ve depo yapısı içerir.',
-        tags: ['Java Swing', 'MySQL', 'Desktop UI'],
-        github: 'https://github.com/erenuguz/MarketFlow-POS',
-        live: 'https://scanmenu.com.tr',
-    },
-    {
-        name: 'MarketFlow POS',
-        description:
-            'Java Swing ile geliştirilmiş masaüstü tabanlı perakende satış ve stok yönetim sistemi. Kapsamlı veritabanı şemaları, ürün takibi ve güvenli MySQL veritabanı entegrasyonu içerir.',
-        tags: ['Java', 'Swing', 'MySQL', 'Desktop'],
-        github: 'https://github.com/erenuguz/MarketFlow-POS',
+            'Gerçek zamanlı veri senkronizasyonu ve kullanıcı kimlik doğrulama altyapısına sahip mesajlaşma uygulaması.',
+        tags: ['Android', 'Flutter', 'Firebase', 'Realtime'],
+        github: 'https://github.com/erenuguz/Skynet-Chat-App',
         live: null,
     },
     {
+        id: 'esp32-smart-parking',
         name: 'ESP32 Smart Parking GUI',
         description:
-            'ESP32 mikrodenetleyici ve fiziksel sensörler kullanarak geliştirilen akıllı otopark otomasyon prototipi. C++ tabanlı donanım kontrolü ve masaüstü arayüzü entegrasyonu sunar.',
+            'ESP32, mesafe sensörleri, OLED ekran ve servo motor kullanılarak geliştirilen akıllı otopark otomasyon prototipi.',
         tags: ['C++', 'ESP32', 'Arduino', 'IoT'],
         github: 'https://github.com/erenuguz/ESP32-SmartParking-GUI',
         live: null,
     },
     {
-        name: 'Skynet Chat App',
+        id: 'marketflow-pos',
+        name: 'MarketFlow POS',
         description:
-            'Gerçek zamanlı veri senkronizasyonu ve kullanıcı kimlik doğrulama altyapısına sahip, mobil ve web platformlarında çalışan modern mesajlaşma uygulaması.',
-        tags: ['Android', 'Flutter', 'Firebase', 'Realtime'],
-        github: 'https://github.com/erenuguz/Skynet-Chat-App',
+            'Java Swing ile geliştirilen masaüstü tabanlı perakende satış, ürün ve stok yönetim sistemi.',
+        tags: ['Java', 'Swing', 'MySQL', 'Desktop'],
+        github: 'https://github.com/erenuguz/MarketFlow-POS',
         live: null,
     },
 ];

@@ -1,0 +1,134 @@
+.about__container {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.about__bio {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    .about__bio {
+    max-width: 800px;
+}
+}
+
+.about__paragraph {
+    margin: 0;
+    color: #555555;
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+.about__statuses {
+    display: flex;
+    flex-direction: column;
+}
+
+.status-card {
+    display: flex;
+    padding: 32px 0;
+    border-bottom: 1px solid #e5e2da;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.status-card:first-child {
+    padding-top: 0;
+}
+
+.status-card:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.status-card__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.status-card__heading {
+    min-width: 0;
+}
+
+.status-card__title {
+    margin: 0;
+    color: #1a1a1a;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.status-card__subtitle {
+    margin: 4px 0 0;
+    color: #6b6b6b;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.status-card__badge {
+    flex-shrink: 0;
+    padding: 6px 12px;
+    color: #4a4a4a;
+    background-color: #f3f2ee;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.status-card__badge--success {
+    color: #1e7b34;
+    background-color: #e6f4ea;
+}
+
+.status-card__description {
+    margin: 0;
+    color: #555555;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.status-card__stats {
+    display: flex;
+    margin-top: 8px;
+    align-items: baseline;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.status-card__stat {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.status-card__stat-value {
+    color: #1a1a1a;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.status-card__stat-label {
+    color: #6b6b6b;
+    font-size: 13px;
+}
+
+@media (max-width: 640px) {
+    .about__container {
+        gap: 36px;
+    }
+
+    .status-card__header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .status-card__stats {
+        gap: 18px;
+    }
+}

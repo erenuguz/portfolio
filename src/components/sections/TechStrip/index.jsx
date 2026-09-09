@@ -1,47 +1,47 @@
-// TechStrip.jsx
-import { techStackData } from '@/data/techStack';
+import Section from '@/components/common/Section';
+
+import {getTechnology, techStripTechnologyIds} from '@/data/technologies';
+
 import TechBadge from './TechBadge';
+import './TechStrip.css';
+
+function TechnologyGroup({decorative = false}) {
+    return (
+        <div
+            className="tech-strip__group"
+            aria-hidden={decorative || undefined}
+        >
+            {techStripTechnologyIds.map((technologyId) => {
+                const technology = getTechnology(technologyId);
+
+                if (!technology) {
+                    return null;
+                }
+
+                return (
+                    <TechBadge
+                        key={technologyId}
+                        technology={technology}
+                        decorative={decorative}
+                    />
+                );
+            })}
+        </div>
+    );
+}
 
 export default function TechStrip() {
-    const scrollingData = [
-        ...techStackData,
-        ...techStackData,
-        ...techStackData,
-        ...techStackData,
-    ];
-
     return (
-        <section
-            style={{
-                backgroundColor: '#FFFFFF',
-                borderBottom: '1px solid #EBEBEB',
-                padding: '4px 0',
-                display: 'flex',
-                overflow: 'hidden',
-                width: '100%',
-                position: 'relative',
-            }}
+        <Section
+            spacing="none"
+            contained={false}
+            className="tech-strip"
+            aria-label="Kullandığım teknolojiler"
         >
-            <style>
-                {`
-                    @keyframes scroll {
-                        0% { transform: translateX(0); }
-                        100% { transform: translateX(-33.33%); }
-                    }
-                    .marquee-track {
-                        display: flex;
-                        gap: 32px;
-                        width: max-content;
-                        animation: scroll 20s linear infinite;
-                    }
-                `}
-            </style>
-
-            <div className="marquee-track">
-                {scrollingData.map((tech, index) => (
-                    <TechBadge key={index} label={tech.name} logo={tech.logo} />
-                ))}
+            <div className="tech-strip__track">
+                <TechnologyGroup />
+                <TechnologyGroup decorative />
             </div>
-        </section>
+        </Section>
     );
 }

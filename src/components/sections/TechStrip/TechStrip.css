@@ -1,0 +1,66 @@
+.tech-strip {
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.tech-strip__track {
+    display: flex;
+    width: max-content;
+    padding: 8px 0;
+    animation: tech-strip-scroll 22s linear infinite;
+}
+
+.tech-strip:hover .tech-strip__track {
+    animation-play-state: paused;
+}
+
+.tech-strip__group {
+    display: flex;
+    padding-right: 32px;
+    align-items: center;
+    gap: 32px;
+}
+
+.tech-badge {
+    display: flex;
+    width: 76px;
+    height: 70px;
+    flex-shrink: 0;
+    color: #3a3a3a;
+    align-items: center;
+    justify-content: center;
+    transition:
+        color 180ms ease,
+        transform 180ms ease;
+}
+
+.tech-badge:hover {
+    color: #1e7b34;
+    transform: translateY(-4px) scale(1.06);
+}
+
+@keyframes tech-strip-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 640px) {
+    .tech-strip__track {
+        animation-duration: 18s;
+    }
+
+    .tech-strip__group {
+        padding-right: 20px;
+        gap: 20px;
+    }
+
+    .tech-badge {
+        width: 62px;
+        height: 62px;
+    }
+}
