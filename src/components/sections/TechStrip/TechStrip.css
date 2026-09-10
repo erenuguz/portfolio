@@ -26,17 +26,18 @@
     width: 76px;
     height: 70px;
     flex-shrink: 0;
-    color: #3a3a3a;
     align-items: center;
     justify-content: center;
-    transition:
-        color 180ms ease,
-        transform 180ms ease;
+    /* color: #3a3a3a; SİLİNDİ - Orijinal renkleri kullanıyoruz */
+    transition: transform 180ms ease; /* Sadece transform animasyonu kaldı */
+    cursor: default;
 }
 
 .tech-badge:hover {
-    color: #1e7b34;
+    /* color: #1e7b34; SİLİNDİ - Resim olduğu için renk değişmez */
     transform: translateY(-4px) scale(1.06);
+    /* Opsiyonel: Üzerine gelince hafif parlama istersen alttaki satırı açabilirsin */
+    /* filter: drop-shadow(0 4px 6px rgba(0,0,0,0.06)); */
 }
 
 @keyframes tech-strip-scroll {

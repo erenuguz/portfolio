@@ -21,6 +21,7 @@ export default function Footer() {
                     </div>
 
                     <div className="site-footer__columns">
+                        {/* Dinamik Kolonlar (Örn: Menü, Projeler) */}
                         {footerData.columns.map((column) => (
                             <div
                                 key={column.title}
@@ -49,6 +50,29 @@ export default function Footer() {
                                 ))}
                             </div>
                         ))}
+
+                        {/* YENİ 4. Kolon: İletişim & Ekstralar */}
+                        <div className="site-footer__column">
+                            <span className="site-footer__column-title">
+                                İletişim
+                            </span>
+                            <a
+                                href="mailto:eren@example.com"
+                                className="site-footer__link"
+                            >
+                                Bana E-posta Gönder
+                            </a>
+                            <span className="site-footer__link site-footer__link--static">
+                                Karaman, Türkiye
+                            </span>
+                            <a
+                                href="/cv.pdf"
+                                target="_blank"
+                                className="site-footer__link"
+                            >
+                                Özgeçmiş (CV) İndir
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -59,6 +83,7 @@ export default function Footer() {
                     </span>
 
                     <div className="site-footer__socials">
+                        {/* Sosyal medya verilerinde LinkedIn olduğundan emin ol */}
                         {footerData.socials.map((social) => (
                             <a
                                 key={social.platform}

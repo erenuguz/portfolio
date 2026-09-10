@@ -36,10 +36,12 @@ export default function Hero() {
                             Projelerim
                         </Button>
 
+                        {/* Outline/Ghost stilini rahat ezebilmek için class eklendi */}
                         <Button
                             href="#contact"
                             variant="secondary"
                             size="large"
+                            className="hero__btn-secondary"
                         >
                             İletişime geç
                         </Button>

@@ -1,42 +1,96 @@
 .stats {
     background-color: #faf9f6;
+    /* Hero bölümü ile zemin bütünlüğü sağlar */
 }
 
+/* 
+   Card kutularından kurtulup flex düzenine geçtik. 
+   Elemanlar kapsayıcıyı eşit doldursun diye space-between eklendi.
+*/
 .stats__grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 64px;
+    justify-content: space-between;
 }
 
 .stat-item {
-    min-width: 0;
-    gap: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px; /* Sayı ve etiket arasındaki mesafe */
+    flex: 1; /* Tüm elemanların eşit esnemesi için */
 }
 
+/* İlk eleman hariç diğerlerinin soluna çizgi ve boşluk ekle */
+.stat-item:not(:first-child) {
+    border-left: 1px solid #e5e5e5;
+    padding-left: 32px;
+}
+
+/* TİPOGRAFİ HİYERARŞİSİ */
 .stat-item__value {
     color: #1a1a1a;
     font-family: Georgia, 'Times New Roman', serif;
-    font-size: 32px;
+    font-size: 36px; /* İstenen vurgulu boyut */
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.1;
 }
 
 .stat-item__label {
-    color: #6b6b6b;
-    font-size: 12px;
+    color: #8a8a8a; /* Zarif, çok hafif gri */
+    font-size: 13px;
+    font-weight: 400; /* Kutu ağırlığı gittiği için normal kalınlık */
     line-height: 1.5;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+    letter-spacing: 0.02em; /* İstenen okunaklılık boşluğu */
+    text-transform: none; /* Uppercase'i kaldırarak daha minimal bir his verdik (opsiyonel, istersen uppercase bırakabilirsin) */
 }
 
-@media (max-width: 760px) {
+/* RESPONSIVE DÜZENLEMELER */
+@media (max-width: 900px) {
     .stats__grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 32px;
+    }
+    .stat-item:not(:first-child) {
+        padding-left: 24px;
     }
 }
 
+/* Tablet boyutunda 2x2 ızgaraya dönüyoruz */
+@media (max-width: 760px) {
+    .stats__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px 24px;
+    }
+
+    /* Grid yapısında çizgileri sıfırlayıp yeniden kuruyoruz */
+    .stat-item {
+        border-left: none !important;
+        padding-left: 0 !important;
+    }
+
+    /* Sadece sağ taraftaki (çift numaralı) elemanlara dikey ayırıcı veriyoruz */
+    .stat-item:nth-child(even) {
+        border-left: 1px solid #eaeaea !important;
+        padding-left: 24px !important;
+    }
+}
+
+/* Telefon boyutunda her şey alt alta (çizgiler tamamen kalkar) */
 @media (max-width: 420px) {
     .stats__grid {
         grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .stat-item:nth-child(even) {
+        border-left: none !important;
+        padding-left: 0 !important;
+    }
+
+    /* Telefondaki tek sütunda ortalı durması daha hoş görünür */
+    .stat-item {
+        align-items: center;
+        text-align: center;
     }
 }

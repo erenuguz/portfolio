@@ -1,7 +1,5 @@
 import Section from '@/components/common/Section';
-
 import {getTechnology, techStripTechnologyIds} from '@/data/technologies';
-
 import TechBadge from './TechBadge';
 import './TechStrip.css';
 
@@ -41,6 +39,8 @@ export default function TechStrip() {
             <div className="tech-strip__track">
                 <TechnologyGroup />
                 <TechnologyGroup decorative />
+                <TechnologyGroup />
+                <TechnologyGroup />
             </div>
         </Section>
     );

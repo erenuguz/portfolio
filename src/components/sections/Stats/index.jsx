@@ -8,7 +8,6 @@ export default function Stats() {
     return (
         <Section
             width="content"
-            
             className="stats"
             containerClassName="stats__grid"
             aria-label="Kariyer istatistikleri"

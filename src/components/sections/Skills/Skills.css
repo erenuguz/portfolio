@@ -7,44 +7,69 @@
 .skills__categories {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 40px;
+    gap: 24px; /* Kartlar arası boşluk */
 }
 
+/* YENİ KART TASARIMI - GÖRSEL RİTİM */
 .skills__category {
     display: flex;
-    min-width: 0;
     flex-direction: column;
-    gap: 14px;
+    gap: 16px;
+    padding: 24px 28px;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    /* Varsayılan arka plan (eğer 3'ten fazla kolon olursa diye) */
+    background-color: #f9f9f8;
+}
+
+/* Farklı kategorilere farklı arka plan tonları ile ritim katma */
+.skills__category:nth-child(3n + 1) {
+    background-color: #fafaf8; /* Çok hafif sıcak/bej */
+}
+.skills__category:nth-child(3n + 2) {
+    background-color: #f6f7f5; /* Çok hafif soğuk/yeşilimsi */
+}
+.skills__category:nth-child(3n + 3) {
+    background-color: #f8f6fa; /* Çok hafif morumsu/lila */
 }
 
 .skills__category-title {
     margin: 0;
-    padding-bottom: 10px;
-    color: #8e897d;
-    border-bottom: 1px solid #e5e2da;
-    font-size: 13px;
-    font-weight: 600;
+    padding-bottom: 12px;
+    color: #1a1a1a; /* Başlık belirginleştirildi */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    font-size: 14px;
+    font-weight: 700;
     line-height: 1.5;
+    letter-spacing: 0.02em;
 }
 
 .skills__list {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 12px;
 }
 
 .skill-card {
     display: flex;
-    min-height: 28px;
+    min-height: 32px; /* Tıklama ve görünüm alanı genişletildi */
     color: #3a3a3a;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    padding: 4px 8px; /* Hover efekti için iç boşluk */
+    margin-left: -8px; /* Padding'i dengelemek için */
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.skill-card:hover {
+    background-color: rgba(0, 0, 0, 0.03); /* Üzerine gelince hafif vurgu */
 }
 
 .skill-card__icon {
     display: flex;
-    width: 22px;
-    height: 22px;
+    width: 24px;
+    height: 24px;
     flex-shrink: 0;
     color: #4a4a4a;
     align-items: center;
@@ -56,20 +81,20 @@
     font-weight: 500;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
     .skills__categories {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 32px;
+        gap: 20px;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
     .skills__container {
         gap: 36px;
     }
 
     .skills__categories {
         grid-template-columns: 1fr;
-        gap: 32px;
+        gap: 20px;
     }
 }
