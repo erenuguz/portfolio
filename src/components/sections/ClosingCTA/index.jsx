@@ -3,7 +3,7 @@ import Button from '@/components/ui/Button';
 
 import './ClosingCTA.css';
 
-export default function ClosingCTA() {
+export default function ClosingCTA({onContactOpen}) {
     return (
         <Section
             width="content"
@@ -17,17 +17,17 @@ export default function ClosingCTA() {
 
             <div className="closing-cta__actions">
                 <Button
-                    href="#contact"
                     variant="light"
                     size="large"
                     icon="chevronRight"
+                    onClick={onContactOpen}
                 >
                     İletişime geç
                 </Button>
 
                 {/* Yeni Ghost Butonumuz */}
                 <Button
-                    href="https://github.com"
+                    href="https://github.com/erenuguz"
                     target="_blank"
                     rel="noopener noreferrer"
                     variant="secondary"

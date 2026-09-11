@@ -6,7 +6,7 @@ import {navigationLinks} from '@/data/navigation';
 
 import './Header.css';
 
-export default function Header() {
+export default function Header({onContactOpen}) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     function closeMenu() {
@@ -15,6 +15,11 @@ export default function Header() {
 
     function toggleMenu() {
         setIsMenuOpen((currentValue) => !currentValue);
+    }
+
+    function handleContactClick() {
+        closeMenu();
+        onContactOpen();
     }
 
     return (
@@ -64,10 +69,9 @@ export default function Header() {
                     </ul>
 
                     <Button
-                        href="#contact"
                         size="small"
                         className="site-header__contact"
-                        onClick={closeMenu}
+                        onClick={handleContactClick}
                     >
                         İletişim
                     </Button>

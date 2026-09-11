@@ -13,12 +13,14 @@ import {
 } from 'react-icons/si';
 
 import {FaAndroid, FaGithub, FaJava, FaLinkedin} from 'react-icons/fa';
-
+import {FaXTwitter} from 'react-icons/fa6';
 import {
     FiArrowUpRight,
     FiChevronRight,
     FiDatabase,
+    FiDownload,
     FiMail,
+    FiMapPin,
     FiMenu,
     FiX,
 } from 'react-icons/fi';
@@ -28,8 +30,10 @@ const ICONS = {
     arduino: SiArduino,
     arrowUpRight: FiArrowUpRight,
     chevronRight: FiChevronRight,
+    close: FiX,
     cpp: SiCplusplus,
     database: FiDatabase,
+    download: FiDownload,
     figma: SiFigma,
     firebase: SiFirebase,
     git: SiGit,
@@ -37,6 +41,7 @@ const ICONS = {
     java: FaJava,
     javascript: SiJavascript,
     linkedin: FaLinkedin,
+    location: FiMapPin,
     mail: FiMail,
     menu: FiMenu,
     mysql: SiMysql,
@@ -44,7 +49,7 @@ const ICONS = {
     python: SiPython,
     react: SiReact,
     vite: SiVite,
-    close: FiX,
+    x: FaXTwitter,
 };
 
 export default function Icon({

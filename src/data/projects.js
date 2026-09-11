@@ -16,22 +16,6 @@ export const projectsData = [
         tags: ['Android', 'Flutter', 'Firebase', 'Realtime'],
         github: 'https://github.com/erenuguz/Skynet-Chat-App',
         live: null,
-    },{
-        id: 'skynet-chat-app',
-        name: 'Skynet Chat App',
-        description:
-            'Gerçek zamanlı veri senkronizasyonu ve kullanıcı kimlik doğrulama altyapısına sahip mesajlaşma uygulaması.',
-        tags: ['Android', 'Flutter', 'Firebase', 'Realtime'],
-        github: 'https://github.com/erenuguz/Skynet-Chat-App',
-        live: null,
-    },{
-        id: 'skynet-chat-app',
-        name: 'Skynet Chat App',
-        description:
-            'Gerçek zamanlı veri senkronizasyonu ve kullanıcı kimlik doğrulama altyapısına sahip mesajlaşma uygulaması.',
-        tags: ['Android', 'Flutter', 'Firebase', 'Realtime'],
-        github: 'https://github.com/erenuguz/Skynet-Chat-App',
-        live: null,
     },
     {
         id: 'esp32-smart-parking',

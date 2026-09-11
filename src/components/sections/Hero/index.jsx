@@ -4,7 +4,7 @@ import Button from '@/components/ui/Button';
 import HeroTechCloud from './HeroTechCloud';
 import './Hero.css';
 
-export default function Hero() {
+export default function Hero({onContactOpen}) {
     return (
         <Section id="home" width="wide" className="hero">
             <div className="hero__layout">
@@ -38,10 +38,10 @@ export default function Hero() {
 
                         {/* Outline/Ghost stilini rahat ezebilmek için class eklendi */}
                         <Button
-                            href="#contact"
                             variant="secondary"
                             size="large"
                             className="hero__btn-secondary"
+                            onClick={onContactOpen}
                         >
                             İletişime geç
                         </Button>

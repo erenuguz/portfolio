@@ -236,15 +236,6 @@
 /* Responsive */
 
 @media (max-width: 640px) {
-    .section {
-        padding: 56px 24px;
-    }
-
-    .section--compact {
-        padding-top: 40px;
-        padding-bottom: 40px;
-    }
-
     .section-header__title {
         font-size: 26px;
     }

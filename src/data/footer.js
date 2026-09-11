@@ -1,32 +1,31 @@
-import {navigationLinks} from './navigation';
-
 export const footerData = {
     name: 'Eren Uğuz',
     role: 'Full-Stack Yazılım Mühendisi',
-    copyrightName: 'Eren Uğuz',
+    tagline: '',
 
-    columns: [
-        {
-            title: 'Keşfet',
-            links: [...navigationLinks, {label: 'İletişim', href: '#contact'}],
-        },
-        {
-            title: 'Sosyal',
-            links: [
-                {
-                    label: 'GitHub',
-                    href: 'https://github.com/erenuguz',
-                    external: true,
-                },
-            ],
-        },
-    ],
+    contact: {
+        email: 'erenn.uguz@gmail.com',
+        location: 'Türkiye · Uzaktan ve taşınmaya açık',
+    },
 
     socials: [
         {
-            platform: 'GitHub',
-            href: 'https://github.com/erenuguz',
+            label: 'GitHub',
             icon: 'github',
+            href: 'https://github.com/erenuguz',
+        },
+        {
+            label: 'LinkedIn',
+            icon: 'linkedin',
+            href: 'https://tr.linkedin.com/in/eren-uğuz/',
+        },
+        {
+            label: 'Twitter / X',
+            icon: 'x',
+            href: null,
         },
     ],
+
+    // CV dosyasını public/cv.pdf olarak ekledikten sonra '/cv.pdf' yap.
+    cvUrl: null,
 };

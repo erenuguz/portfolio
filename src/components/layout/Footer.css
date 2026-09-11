@@ -1,6 +1,7 @@
 .site-footer {
+    color: #1a1a1a;
     background-color: #ffffff;
-    border-top: 1px solid rgba(0, 0, 0, 0.06); /* İnce ve soft ayırıcı çizgi */
+    border-top: 1px solid #e5e2da;
 }
 
 .site-footer__container {
@@ -8,140 +9,209 @@
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
-    /* Nefes alanı artırıldı */
-    padding: 80px 64px 32px;
+    padding: 72px 32px 28px;
     flex-direction: column;
-    gap: 64px; /* Üst ve alt parçalar arası mesafe genişletildi */
+    gap: 40px;
 }
 
-.site-footer__top {
-    display: flex;
-    justify-content: space-between;
-    gap: 48px;
-    flex-wrap: wrap;
+.site-footer__main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(240px, 340px);
+    align-items: start;
+    gap: 80px;
 }
 
-.site-footer__brand {
+.site-footer__identity {
     display: flex;
-    max-width: 280px;
+    max-width: 560px;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
+    gap: 32px;
 }
 
 .site-footer__name {
+    margin: 0;
     color: #1a1a1a;
     font-family: Georgia, 'Times New Roman', serif;
-    font-size: 20px;
+    font-size: 28px;
     font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
 }
 
 .site-footer__role {
+    margin: 6px 0 0;
     color: #6b6b6b;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.6;
 }
 
-/* KOLONLAR & BAĞLANTILAR */
-.site-footer__columns {
-    display: flex;
-    gap: 48px; /* İstediğin boşluk değeri */
-    flex-wrap: wrap;
+.site-footer__tagline {
+    max-width: 480px;
+    margin: 0;
+    color: #3f3f3f;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 21px;
+    font-style: italic;
+    line-height: 1.55;
 }
 
-.site-footer__column {
+.site-footer__contact {
     display: flex;
-    min-width: 120px;
     flex-direction: column;
-    gap: 16px; /* Bağlantılar arası nefes payı artırıldı */
+    gap: 14px;
 }
 
-.site-footer__column-title {
+.site-footer__contact-title {
+    margin: 0 0 6px;
     color: #1a1a1a;
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 4px;
-}
-
-.site-footer__link {
-    color: #6b6b6b; /* Küçük gri metin tonları */
     font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.site-footer__contact-item {
+    display: flex;
+    width: fit-content;
+    padding: 0;
+    color: #5a5a5a;
+    background: none;
+    border: none;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    line-height: 1.5;
     text-decoration: none;
-    transition: color 160ms ease;
 }
 
-.site-footer__link--static {
-    cursor: default;
+.site-footer__contact-item svg {
+    flex-shrink: 0;
+    color: #1e7b34;
 }
 
-.site-footer__link:not(.site-footer__link--static):hover {
+.site-footer__contact-button {
+    cursor: pointer;
+    text-align: left;
+}
+
+.site-footer__contact-button:hover,
+a.site-footer__contact-item:hover {
     color: #1a1a1a;
 }
 
-/* ALT BANT & TELİF HAKKI */
-.site-footer__bottom {
+.site-footer__actions {
     display: flex;
-    padding-top: 32px;
-    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 24px 0;
+    border-top: 1px solid #dedbd2;
+    border-bottom: 1px solid #dedbd2;
     align-items: center;
     justify-content: space-between;
-    gap: 16px;
-    flex-wrap: wrap;
+    gap: 24px;
 }
 
-.site-footer__copyright {
-    color: #8a8a8a; /* Daha soft, göz yormayan gri */
-    font-size: 12px;
-}
-
-/* SOSYAL MEDYA İKONLARI */
 .site-footer__socials {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
-.site-footer__social {
+.site-footer__action {
     display: inline-flex;
-    width: 38px;
-    height: 38px;
-    color: #6b6b6b;
-    background-color: transparent; /* Beyaz dolgu yerine şeffaf (daha minimal) */
-    border: 1px solid #e5e2da;
-    border-radius: 50%;
+    min-height: 40px;
+    padding: 9px 14px;
+    color: #3f3f3f;
+    background-color: transparent;
+    border: 1px solid #d8d5cc;
+    border-radius: 8px;
     align-items: center;
     justify-content: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
     text-decoration: none;
-    transition: all 160ms ease;
+    transition:
+        color 160ms ease,
+        background-color 160ms ease,
+        border-color 160ms ease,
+        transform 160ms ease;
 }
 
-.site-footer__social:hover {
-    color: #1a1a1a;
-    border-color: #bdb8ac;
-    background-color: #ffffff;
-    transform: translateY(-2px);
+.site-footer__action:hover {
+    color: #ffffff;
+    background-color: #1a1a1a;
+    border-color: #1a1a1a;
+    transform: translateY(-1px);
 }
 
-/* MOBİL GÖRÜNÜM */
-@media (max-width: 640px) {
+.site-footer__cv {
+    flex-shrink: 0;
+}
+
+.site-footer__bottom {
+    display: flex;
+    color: #77736a;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.site-footer__separator {
+    color: #aaa59a;
+}
+
+@media (max-width: 760px) {
     .site-footer__container {
-        padding: 64px 24px 32px;
-        gap: 48px;
+        padding: 56px 24px 24px;
+        gap: 32px;
     }
 
-    .site-footer__top {
-        flex-direction: column;
+    .site-footer__main {
+        grid-template-columns: 1fr;
         gap: 40px;
     }
 
-    .site-footer__columns {
-        gap: 32px 48px;
-        flex-direction: row; /* Mobilde grid gibi yan yana dizebilir */
+    .site-footer__identity {
+        gap: 24px;
+    }
+
+    .site-footer__actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .site-footer__socials {
+        width: 100%;
+    }
+
+    .site-footer__cv {
+        width: fit-content;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-footer__tagline {
+        font-size: 19px;
+    }
+
+    .site-footer__socials {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .site-footer__action,
+    .site-footer__cv {
+        width: 100%;
     }
 
     .site-footer__bottom {
         align-items: flex-start;
-        flex-direction: column-reverse; /* Mobilde telif hakkı yazısı en alta iner */
-        gap: 24px;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .site-footer__separator {
+        display: none;
     }
 }

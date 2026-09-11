@@ -3,101 +3,102 @@ import {footerData} from '@/data/footer';
 
 import './Footer.css';
 
-export default function Footer() {
+export default function Footer({onContactOpen}) {
     const currentYear = new Date().getFullYear();
+
+    const activeSocials = footerData.socials.filter((social) => social.href);
 
     return (
         <footer className="site-footer">
             <div className="site-footer__container">
-                <div className="site-footer__top">
-                    <div className="site-footer__brand">
-                        <span className="site-footer__name">
-                            {footerData.name}
-                        </span>
+                <div className="site-footer__main">
+                    <div className="site-footer__identity">
+                        <div>
+                            <h2 className="site-footer__name">
+                                {footerData.name}
+                            </h2>
 
-                        <span className="site-footer__role">
-                            {footerData.role}
-                        </span>
+                            <p className="site-footer__role">
+                                {footerData.role}
+                            </p>
+                        </div>
+
+                        <p className="site-footer__tagline">
+                            {footerData.tagline}
+                        </p>
                     </div>
 
-                    <div className="site-footer__columns">
-                        {/* Dinamik Kolonlar (Örn: Menü, Projeler) */}
-                        {footerData.columns.map((column) => (
-                            <div
-                                key={column.title}
-                                className="site-footer__column"
-                            >
-                                <span className="site-footer__column-title">
-                                    {column.title}
-                                </span>
+                    <div className="site-footer__contact">
+                        <h3 className="site-footer__contact-title">
+                            Hızlı iletişim
+                        </h3>
 
-                                {column.links.map((link) => (
-                                    <a
-                                        key={`${column.title}-${link.label}`}
-                                        href={link.href}
-                                        className="site-footer__link"
-                                        target={
-                                            link.external ? '_blank' : undefined
-                                        }
-                                        rel={
-                                            link.external
-                                                ? 'noopener noreferrer'
-                                                : undefined
-                                        }
-                                    >
-                                        {link.label}
-                                    </a>
-                                ))}
-                            </div>
-                        ))}
+                        {footerData.contact.email ? (
+                            <a
+                                href={`mailto:${footerData.contact.email}`}
+                                className="site-footer__contact-item"
+                            >
+                                <Icon name="mail" size={18} />
 
-                        {/* YENİ 4. Kolon: İletişim & Ekstralar */}
-                        <div className="site-footer__column">
-                            <span className="site-footer__column-title">
-                                İletişim
-                            </span>
-                            <a
-                                href="mailto:eren@example.com"
-                                className="site-footer__link"
-                            >
-                                Bana E-posta Gönder
+                                <span>{footerData.contact.email}</span>
                             </a>
-                            <span className="site-footer__link site-footer__link--static">
-                                Karaman, Türkiye
-                            </span>
-                            <a
-                                href="/cv.pdf"
-                                target="_blank"
-                                className="site-footer__link"
+                        ) : (
+                            <button
+                                type="button"
+                                className="site-footer__contact-item site-footer__contact-button"
+                                onClick={onContactOpen}
                             >
-                                Özgeçmiş (CV) İndir
-                            </a>
+                                <Icon name="mail" size={18} />
+                                <span>İletişim formunu aç</span>
+                            </button>
+                        )}
+
+                        <div className="site-footer__contact-item">
+                            <Icon name="location" size={18} />
+
+                            <span>{footerData.contact.location}</span>
                         </div>
                     </div>
                 </div>
 
-                <div className="site-footer__bottom">
-                    <span className="site-footer__copyright">
-                        © {currentYear} {footerData.copyrightName}. Tüm hakları
-                        saklıdır.
-                    </span>
-
+                <div className="site-footer__actions">
                     <div className="site-footer__socials">
-                        {/* Sosyal medya verilerinde LinkedIn olduğundan emin ol */}
-                        {footerData.socials.map((social) => (
+                        {activeSocials.map((social) => (
                             <a
-                                key={social.platform}
+                                key={social.label}
                                 href={social.href}
-                                className="site-footer__social"
-                                aria-label={social.platform}
-                                title={social.platform}
+                                className="site-footer__action"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <Icon name={social.icon} size={18} />
+                                <Icon name={social.icon} size={17} />
+
+                                <span>{social.label}</span>
                             </a>
                         ))}
                     </div>
+
+                    {footerData.cvUrl && (
+                        <a
+                            href={footerData.cvUrl}
+                            className="site-footer__action site-footer__cv"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <Icon name="download" size={17} />
+                            <span>CV İndir</span>
+                        </a>
+                    )}
+                </div>
+
+                <div className="site-footer__bottom">
+                    <span>
+                        © {currentYear} {footerData.name}
+                    </span>
+
+                    <span className="site-footer__separator">•</span>
+
+                    <span>Tüm hakları saklıdır.</span>
                 </div>
             </div>
         </footer>
