@@ -1,3 +1,5 @@
+import './Section.css';
+
 export default function Section({
     id,
     children,
@@ -30,17 +32,13 @@ export default function Section({
     return (
         <section id={id} className={sectionClasses} {...rest}>
             {contained ? (
-                <div className={containerClasses}>
-                    {children}
-                </div>
+                <div className={containerClasses}>{children}</div>
             ) : (
                 children
             )}
 
             {fullBleed && (
-                <div className="section__full-bleed">
-                    {fullBleed}
-                </div>
+                <div className="section__full-bleed">{fullBleed}</div>
             )}
         </section>
     );

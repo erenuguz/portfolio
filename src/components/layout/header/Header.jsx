@@ -2,8 +2,8 @@ import Logo from './components/Logo';
 import Nav from './components/Nav';
 import IconGroup from './components/IconGroup';
 import CTAButton from './components/CTAButton';
+
 import './Header.css';
-import '@/styles/theme.css';
 
 function Header() {
     return (

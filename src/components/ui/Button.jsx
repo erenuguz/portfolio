@@ -1,4 +1,5 @@
 import Icon from './Icon';
+import './Button.css';
 
 export default function Button({
     children,

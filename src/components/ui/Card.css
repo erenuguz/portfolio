@@ -1,0 +1,34 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: var(--card-background, #ffffff);
+    border: 1px solid #e5e2da;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.card--compact {
+    padding: 16px;
+}
+
+.card--comfortable {
+    padding: 24px;
+}
+
+.card--flat {
+    box-shadow: none;
+}
+
+.card--interactive {
+    transition:
+        transform 180ms ease,
+        box-shadow 180ms ease,
+        border-color 180ms ease;
+}
+
+.card--interactive:hover {
+    transform: translateY(-3px);
+    border-color: #d4d0c6;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.07);
+}

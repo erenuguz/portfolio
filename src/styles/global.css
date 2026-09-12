@@ -65,10 +65,6 @@ ul {
     margin-top: 0;
 }
 
-section[id] {
-    scroll-margin-top: 76px;
-}
-
 ::selection {
     color: #ffffff;
     background-color: #1e7b34;
