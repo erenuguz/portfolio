@@ -9,7 +9,7 @@
     font-weight: 600;
     border: none;
     cursor: pointer;
-    font: inherit;
+    font-family: inherit;
 }
 
 .cta-button:hover {

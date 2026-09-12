@@ -22,4 +22,5 @@ function Header({onContactOpen}) {
         </header>
     );
 }
+
 export default Header;
