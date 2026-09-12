@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import Footer from '@/components/layout/Footer';
+import Footer from '@/components/layout/footer/Footer';
 import Header from '@/components/layout/header/Header';
 import About from '@/components/sections/About';
 import ClosingCTA from '@/components/sections/ClosingCTA';

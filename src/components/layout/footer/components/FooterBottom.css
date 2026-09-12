@@ -1,0 +1,25 @@
+.footer-bottom {
+    display: flex;
+    color: #77736a;
+    align-items: center;
+    flex-direction: row;
+    gap: 8px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.footer-bottom__dot {
+    color: #aaa59a;
+}
+
+@media (max-width: 480px) {
+    .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .footer-bottom__dot {
+        display: none;
+    }
+}

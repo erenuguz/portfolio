@@ -1,0 +1,14 @@
+.footer-cv {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #3f3f3f;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 160ms ease;
+}
+
+.footer-cv:hover {
+    color: #1a1a1a;
+}
