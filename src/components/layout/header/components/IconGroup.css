@@ -1,0 +1,10 @@
+.icon-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.icon-group__img {
+    height: 20px;
+    width: 20px;
+}

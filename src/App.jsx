@@ -1,8 +1,8 @@
 import {useState} from 'react';
 
 import Footer from '@/components/layout/Footer';
-import Header from '@/components/layout/Header';
 
+import Header from '@/components/layout/header/Header';
 import About from '@/components/sections/About';
 import ClosingCTA from '@/components/sections/ClosingCTA';
 import ContactModal from '@/components/sections/Contact';
@@ -26,7 +26,6 @@ export default function App() {
     return (
         <>
             <Header onContactOpen={openContact} />
-
             <main>
                 <Hero onContactOpen={openContact} />
                 <About />
