@@ -5,7 +5,7 @@ import CTAButton from './components/CTAButton';
 
 import './Header.css';
 
-function Header() {
+function Header({onContactOpen}) {
     return (
         <header className="header">
             <div className="header__inner">
@@ -16,7 +16,7 @@ function Header() {
                 <div className="header__actions">
                     <Nav className="header__nav" />
                     <IconGroup />
-                    <CTAButton />
+                    <CTAButton onContactOpen={onContactOpen} />
                 </div>
             </div>
         </header>

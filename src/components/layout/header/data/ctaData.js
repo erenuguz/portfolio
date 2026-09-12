@@ -1,6 +1,6 @@
 const ctaData = {
     label: 'İletişim',
-    href: '/iletisim',
+    href: '/contact',
 };
 
 export default ctaData;

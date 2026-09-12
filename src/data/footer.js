@@ -1,7 +1,7 @@
 export const footerData = {
     name: 'Eren Uğuz',
     role: 'Full-Stack Yazılım Mühendisi',
-    tagline: '',
+    tagline: 'gfdg',
 
     contact: {
         email: 'erenn.uguz@gmail.com',

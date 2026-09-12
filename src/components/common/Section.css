@@ -1,8 +1,8 @@
 .section {
     width: 100%;
-    padding: 80px 0;
-    background-color: #ffffff;
-    border-bottom: 1px solid #e5e2da;
+    padding: var(--section-padding-y, 80px) 0;
+    background-color: var(--color-background);
+    border-bottom: 1px solid var(--color-border);
 }
 
 .section--compact {
@@ -16,32 +16,32 @@
 }
 
 .section--dark {
-    color: #ffffff;
-    background-color: #1a1a1a;
-    border-bottom-color: #1a1a1a;
+    color: var(--color-text-inverse);
+    background-color: var(--color-dark);
+    border-bottom-color: var(--color-dark);
 }
 
 .section--muted {
-    background-color: #faf9f6;
+    background-color: var(--color-surface-soft);
 }
 
 .section__container {
     width: 100%;
     margin: 0 auto;
-    padding-right: 32px;
-    padding-left: 32px;
+    padding-right: var(--page-gutter, 32px);
+    padding-left: var(--page-gutter, 32px);
 }
 
 .section__container--wide {
-    max-width: 1280px;
+    max-width: var(--layout-wide, 1280px);
 }
 
 .section__container--content {
-    max-width: 900px;
+    max-width: var(--layout-content, 900px);
 }
 
 .section__container--reading {
-    max-width: 800px;
+    max-width: var(--layout-reading, 800px);
 }
 
 .section__full-bleed {
@@ -54,13 +54,13 @@ section[id] {
 
 @media (max-width: 640px) {
     .section {
-        padding-top: 56px;
-        padding-bottom: 56px;
+        padding-top: var(--section-padding-y-mobile, 56px);
+        padding-bottom: var(--section-padding-y-mobile, 56px);
     }
 
     .section--compact {
-        padding-top: 40px;
-        padding-bottom: 40px;
+        padding-top: var(--space-10, 40px);
+        padding-bottom: var(--space-10, 40px);
     }
 
     .section--none {
@@ -69,7 +69,7 @@ section[id] {
     }
 
     .section__container {
-        padding-right: 24px;
-        padding-left: 24px;
+        padding-right: var(--page-gutter-mobile, 24px);
+        padding-left: var(--page-gutter-mobile, 24px);
     }
 }

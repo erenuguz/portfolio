@@ -10,9 +10,9 @@
 }
 
 .logo__text {
-    color: var(--header-logo-text-color);
-    font-family: var(--header-logo-font-family);
-    font-size: var(--header-logo-font-size);
-    font-weight: var(--header-logo-font-weight);
-    letter-spacing: var(--header-logo-letter-spacing);
+    color: var(--color-text-primary);
+    font-family: var(--font-heading);
+    font-size: var(--font-size-section-title);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: -0.025em;
 }
