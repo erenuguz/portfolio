@@ -3,6 +3,7 @@ import FooterContact from './components/FooterContact';
 import FooterSocials from './components/FooterSocials';
 import FooterCV from './components/FooterCV';
 import FooterBottom from './components/FooterBottom';
+import {footerData} from '@/data/footer';
 import './Footer.css';
 
 export default function Footer({onContactOpen}) {
@@ -17,9 +18,11 @@ export default function Footer({onContactOpen}) {
                     <FooterContact onContactOpen={onContactOpen} />
                 </div>
 
-                <div className="footer__actions">
-                    <FooterCV />
-                </div>
+                {footerData.cvUrl && (
+                    <div className="footer__actions">
+                        <FooterCV />
+                    </div>
+                )}
 
                 <FooterBottom />
             </div>
