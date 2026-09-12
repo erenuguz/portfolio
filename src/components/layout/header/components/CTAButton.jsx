@@ -1,11 +1,11 @@
 import ctaData from '../data/ctaData';
 import './CTAButton.css';
 
-function CTAButton() {
+function CTAButton({onContactOpen}) {
     return (
-        <a href={ctaData.href} className="cta-button">
+        <button type="button" onClick={onContactOpen} className="cta-button">
             {ctaData.label}
-        </a>
+        </button>
     );
 }
 

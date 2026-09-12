@@ -9,15 +9,15 @@
 
 .nav__link {
     display: inline-block;
-    color: var(--header-nav-link-color);
-    font-size: var(--header-nav-link-font-size);
-    font-weight: var(--header-nav-link-font-weight);
-    letter-spacing: var(--header-nav-link-letter-spacing);
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-label);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: 0.12em;
     text-decoration: none;
     text-transform: uppercase;
-    transition: color 160ms ease;
+    transition: color var(--motion-fast, 160ms ease);
 }
 
 .nav__link:hover {
-    color: var(--header-nav-link-color-hover);
+    color: var(--color-text-primary);
 }

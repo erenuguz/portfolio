@@ -107,28 +107,4 @@
     /* ===== Z-index ===== */
     --z-header: 50;
     --z-modal: 100;
-
-    /* ===== Header'a özel (eski sistem — kademeli olarak yukarıdakilere taşınacak) ===== */
-    --header-background-color: var(--color-background);
-    --header-border-color: var(--color-border);
-
-    --header-logo-text-color: var(--color-text-primary);
-    --header-logo-font-family: var(--font-heading);
-    --header-logo-font-size: var(--font-size-section-title);
-    --header-logo-font-size-mobile: 24px;
-    --header-logo-font-weight: var(--font-weight-bold);
-    --header-logo-letter-spacing: -0.025em;
-
-    --header-toggle-icon-color: var(--color-text-primary);
-    --header-toggle-background-color: var(--color-background);
-    --header-toggle-border-color: var(--color-border);
-
-    --header-nav-menu-background-mobile: var(--color-background);
-    --header-nav-menu-border-color-mobile: var(--color-border);
-
-    --header-nav-link-color: var(--color-text-secondary);
-    --header-nav-link-color-hover: var(--color-text-primary);
-    --header-nav-link-font-size: var(--font-size-label);
-    --header-nav-link-font-weight: var(--font-weight-semibold);
-    --header-nav-link-letter-spacing: 0.12em;
 }
