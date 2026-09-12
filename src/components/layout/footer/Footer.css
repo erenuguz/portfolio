@@ -22,12 +22,18 @@
     gap: 80px;
 }
 
+.footer__left {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
 .footer__actions {
     display: flex;
     padding: 24px 0 0;
     border-top: 1px solid #dedbd2;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     flex-direction: row;
     gap: 24px;
 }

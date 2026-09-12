@@ -10,12 +10,14 @@ export default function Footer({onContactOpen}) {
         <footer className="footer">
             <div className="footer__inner">
                 <div className="footer__top">
-                    <FooterIdentity />
+                    <div className="footer__left">
+                        <FooterIdentity />
+                        <FooterSocials />
+                    </div>
                     <FooterContact onContactOpen={onContactOpen} />
                 </div>
 
                 <div className="footer__actions">
-                    <FooterSocials />
                     <FooterCV />
                 </div>
 
