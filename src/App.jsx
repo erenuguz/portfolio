@@ -26,7 +26,7 @@ export default function App() {
         <>
             <Header onContactOpen={openContact} />
             <main>
-                <Hero />
+                <Hero onContactOpen={openContact} />
                 <About />
                 <Stats />
                 <TechStrip />
